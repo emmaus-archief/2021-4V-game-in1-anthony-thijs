@@ -2,7 +2,7 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
-- *Antony Hitalessy*
+- *Anthony Hitalessy*
 - *Thijs Kramer*
 
 ## Mijn planning
