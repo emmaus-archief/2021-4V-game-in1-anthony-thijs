@@ -22,8 +22,7 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 300; // x-positie van speler
-var spelerY = 400; // y-positie van speler
+
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -107,8 +106,8 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
-var spelerX = 1300; // x-positie van speler
-var spelerY = 1400; // y-positie van speler
+var spelerX = 700; // x-positie van speler
+var spelerY = 700; // y-positie van speler
 
 };
 
