@@ -77,12 +77,15 @@ var tekenKogel = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
+var spelerX = 300
+var spelerY = 500 
 var tekenSpeler = function(x, y) {
   fill("white");
   rect(x, y, 50, 50);
+
   var spelerX = 1300; // x-positie van speler
 var spelerY = 1400; // y-positie van speler
-};
+}; 
 
 
 /**
