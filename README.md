@@ -11,9 +11,9 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [ Anthony]  teken speler
 - [ Thijs ] beweeg speler
-- [ ] ... *(vul zelf aan)*
+- [ ] kleine kolkjes in scherm voor meer tijd 
 - [ ] levels op scherm zitten 
-- [ ] punten kunnen scoren
+- [ ]  platforms maken  
 - [ Thijs ] uitlegscherm
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
@@ -22,7 +22,7 @@ Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [ ] *later uitwerken*
 
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
-- [ ] *later uitwerken*
+- [ ] klok in scherm van tijd
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
