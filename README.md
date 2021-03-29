@@ -9,13 +9,12 @@ Gemaakt door:
 
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
-- [ ] teken speler
-- [ ] key commands maken
-- [ ] beweeg speler
-- [ ] tegenstanders maken
-- [ ] punten op scherm zetten
+- [ Anthony]  teken speler
+- [ Thijs ] beweeg speler
+- [ ] ... *(vul zelf aan)*
+- [ ] levels op scherm zitten 
 - [ ] punten kunnen scoren
-- [ ] uitlegscherm
+- [ Thijs ] uitlegscherm
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [ ] *later uitwerken*
