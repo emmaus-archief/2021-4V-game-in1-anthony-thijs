@@ -81,6 +81,8 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
   fill("white");
   rect(x, y, 50, 50);
+  var spelerX = 1300; // x-positie van speler
+var spelerY = 1400; // y-positie van speler
 };
 
 
@@ -105,6 +107,8 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
+var spelerX = 1300; // x-positie van speler
+var spelerY = 1400; // y-positie van speler
 
 };
 
