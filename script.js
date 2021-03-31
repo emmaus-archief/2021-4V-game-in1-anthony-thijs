@@ -33,6 +33,14 @@ var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
+var keys ={
+up: false,
+down: false,
+left: false,
+right: false
+};
+
+
 
 
 
@@ -106,7 +114,18 @@ var beweegKogel = function() {
 var beweegSpeler = function() {
 var spelerX = 700; // x-positie van speler
 var spelerY = 700; // y-positie van speler
-
+if ( keys.up) {
+    player.y -= 10;
+}
+if (keys.down) 
+player.y += 10;
+}
+if (keys.left)
+player.x -= 10;
+}
+if (keys.right)
+player.x += 10;
+}
 };
 
 
