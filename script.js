@@ -22,7 +22,7 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 50; // x-positie van speler
+var spelerX = 60; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
 var kogelX = 0;    // x-positie van kogel
