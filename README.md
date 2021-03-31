@@ -9,8 +9,8 @@ Gemaakt door:
 
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
-- [ Anthony]  teken speler
-- [ Thijs ] beweeg speler
+- [Anthony]  teken speler
+- [Thijs ] beweeg speler
 - [ ] kleine kolkjes in scherm voor meer tijd 
 - [ ] levels op scherm zitten 
 - [ ]  platforms maken  
