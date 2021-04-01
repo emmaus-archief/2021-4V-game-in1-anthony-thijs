@@ -60,7 +60,7 @@ sy: 20
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
+  fill("white");
   rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
