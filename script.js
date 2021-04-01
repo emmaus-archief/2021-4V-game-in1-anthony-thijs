@@ -98,7 +98,7 @@ var tekenSpeler = function(x, y) {
   fill("red")
   ellipse(60, 635, 50, 50);
   fill("black")
-  rect(40, 450, 10, 10);
+  line(spelerX, spelerY, 850, 0);
 
 };
 
@@ -149,6 +149,7 @@ if (player.y < 0) {
     player.y = 512 - player.sy;
 }
 };
+
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
