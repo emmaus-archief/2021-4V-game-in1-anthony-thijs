@@ -123,16 +123,16 @@ var beweegKogel = function() {
  */
  var beweegSpeler = function() {
 
-if (keyIsPressed && keyCode === UP) {
+if (keyIsPressed && keyCode === up) {
     spelerY - 10;
 }
-else if (keyIsPressed && keyCode === DOWN) {
+else if (keyIsPressed && keyCode === down) {
     spelerY + 10;
 }
-else if (keyIsPressed && keyCode === LEFT) {
+else if (keyIsPressed && keyCode === left) {
    spelerX - 10;
 }
-else if (keyIsPressed && keyCode === RIGHT) {
+else if (keyIsPressed && keyCode === right) {
    spelerX + 10;
 }
 };
