@@ -40,6 +40,12 @@ left: false,
 right: false
 };
 
+var player ={
+x : 100,
+y: 300,
+sx: 20,
+sy: 20
+};
 
 
 
@@ -112,24 +118,33 @@ var beweegKogel = function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
-var beweegSpeler = function() {
-var spelerX = 700; // x-positie van speler
-var spelerY = 700; // y-positie van speler
-if ( keys.up) {
+ var beweegSpeler = function() {
+
+if (keys.up) {
     player.y -= 10;
 }
-if (keys.down) 
-player.y += 10;
+if (keys.down) {
+    player.y += 10;
 }
-if (keys.left)
-player.x -= 10;
+if (keys.left) {
+   player.x -= 10;
 }
-if (keys.right)
-player.x += 10;
+if (keys.right) {
+   player.x += 10;
+}
+
+if ( player.x < 0) {
+    player.x = 0;
+}
+else if ((player.x + player.sx) > 512) {
+player.x = 512 -player.sx;
+}
+if (player.y < 0) {
+    player.y =0;
+} else if ((player.y + player.sy) > 512) {
+    player.y = 512 - player.sy;
 }
 };
-
-
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
