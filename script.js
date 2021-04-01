@@ -97,8 +97,7 @@ var tekenSpeler = function(x, y) {
   ellipse(spelerX, spelerY, 50, 50);
   fill("red")
   ellipse(60, 635, 50, 50);
-  fill("black")
-  line(spelerX, spelerY, 850, 0);
+  
 
 };
 
