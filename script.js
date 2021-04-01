@@ -124,29 +124,17 @@ var beweegKogel = function() {
  */
  var beweegSpeler = function() {
 
-if (keys.up) {
-    player.y -= 10;
+if (keyIsPressed && keyCode === UP) {
+    spelerY - 10;
 }
-if (keys.down) {
-    player.y += 10;
+else if (keyIsPressed && keyCode === DOWN) {
+    spelerY + 10;
 }
-if (keys.left) {
-   player.x -= 10;
+else if (keyIsPressed && keyCode === LEFT) {
+   spelerX - 10;
 }
-if (keys.right) {
-   player.x += 10;
-}
-
-if ( player.x < 0) {
-    player.x = 0;
-}
-else if ((player.x + player.sx) > 512) {
-player.x = 512 -player.sx;
-}
-if (player.y < 0) {
-    player.y =0;
-} else if ((player.y + player.sy) > 512) {
-    player.y = 512 - player.sy;
+else if (keyIsPressed && keyCode === RIGHT) {
+   spelerX + 10;
 }
 };
 /**
