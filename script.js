@@ -201,7 +201,7 @@ function draw() {
       beweegVijand();
       beweegKogel();
       beweegSpeler();
-      
+      beweegSpeler();
       if (checkVijandGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
