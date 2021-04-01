@@ -96,9 +96,8 @@ var tekenSpeler = function(x, y) {
   fill("red");
   ellipse(spelerX, spelerY, 50, 50);
   fill("red")
-  ellipse(90, 500, 50, 50);
-  fill("black")
-  rect(spelerX, spelerY, 35, 35);
+  ellipse(60, 635, 50, 50);
+  
 
 };
 
@@ -137,6 +136,7 @@ else if (keyIsPressed && keyCode === RIGHT) {
    spelerX + 10;
 }
 };
+
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
