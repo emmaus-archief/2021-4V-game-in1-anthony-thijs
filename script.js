@@ -47,8 +47,8 @@ sx: 20,
 sy: 20
 };
 
- Const KEY_LEFT = 37;
- Const KEY_RIGHT = 39;
+ const KEY_LEFT = 37;
+ cosnt KEY_RIGHT = 39;
 
 
 
@@ -127,21 +127,6 @@ var beweegKogel = function() {
        if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
    }
-
-
-
-if (keyIsPressed && keyCode === up) {
-    spelerY - 10;
-}
-else if (keyIsPressed && keyCode === down) {
-    spelerY + 10;
-}
-else if (keyIsPressed && keyCode === left) {
-   spelerX - 10;
-}
-else if (keyIsPressed && keyCode === right) {
-   spelerX + 10;
-}
 };
 
 /**
