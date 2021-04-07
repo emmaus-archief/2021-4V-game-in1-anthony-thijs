@@ -47,8 +47,8 @@ sx: 20,
 sy: 20
 };
 
- const KEY_LEFT = 37;
- cosnt KEY_RIGHT = 39;
+ var KEY_LEFT = 37;
+ var KEY_RIGHT = 39;
 
 
 
