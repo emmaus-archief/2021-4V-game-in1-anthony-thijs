@@ -47,7 +47,8 @@ sx: 20,
 sy: 20
 };
 
-
+ var KEY_LEFT = 37;
+ var KEY_RIGHT = 39;
 
 
 
@@ -120,19 +121,10 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
  var beweegSpeler = function() {
-
-if (keyIsPressed && keyCode === up) {
-    spelerY - 10;
-}
-else if (keyIsPressed && keyCode === down) {
-    spelerY + 10;
-}
-else if (keyIsPressed && keyCode === left) {
-   spelerX - 10;
-}
-else if (keyIsPressed && keyCode === right) {
-   spelerX + 10;
-}
+   if (keyIsPressed) {
+       if (keyIsDown(KEY_LEFT)) {spelerX, -= 3}
+       else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
+   }
 };
 
 /**
