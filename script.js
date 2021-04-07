@@ -96,7 +96,7 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
   fill("red");
   ellipse(spelerX, spelerY, 50, 50);
-}
+
 };
 
 
@@ -121,7 +121,7 @@ var beweegKogel = function() {
  */
  var beweegSpeler = function() {
    if (keyIsPressed) {
-       if (keyIsDown(KEY_LEFT)) {spelerX, -= 3}
+       if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
    }
 };
