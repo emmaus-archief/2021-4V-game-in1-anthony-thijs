@@ -47,7 +47,8 @@ sx: 20,
 sy: 20
 };
 
-
+ Const KEY_LEFT = 37;
+ Const KEY_RIGHT = 39;
 
 
 
@@ -60,7 +61,7 @@ sy: 20
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("white");
+  fill("purple");
   rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
@@ -122,6 +123,12 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
  var beweegSpeler = function() {
+   if (keyIsPressed) {
+       if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
+       else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
+   }
+
+
 
 if (keyIsPressed && keyCode === up) {
     spelerY - 10;
