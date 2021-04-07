@@ -95,10 +95,8 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
   fill("red");
   ellipse(spelerX, spelerY, 50, 50);
-  fill("red")
+  fill("red");
   ellipse(60, 635, 50, 50);
-  
-
 };
 
 
