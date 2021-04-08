@@ -28,8 +28,8 @@ var spelerY = 600; // y-positie van speler
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
-var vijandX = 125;   // x-positie van vijand
-var vijandY = 600;   // y-positie van vijand
+var vijandX = 59;   // x-positie van vijand
+var vijandY = 800;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
