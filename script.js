@@ -28,8 +28,8 @@ var spelerY = 600; // y-positie van speler
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
-var vijandX = 59;   // x-positie van vijand
-var vijandY = 800;   // y-positie van vijand
+var vijandX = 300;   // x-positie van vijand
+var vijandY = 600;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -54,7 +54,7 @@ sy: 20
  var sprongHoogte = 5;
  var speedJump = 0;
  
-
+let platformTel = 5
 
 
 
@@ -146,6 +146,18 @@ if (keyIsPressed) {
 
 
 
+  
+  
+
+function createPlatform() {
+    for (let i= 0; i < platformTel; i++) {
+        let platfromTussen = 600 / platformTel
+        let nieuwPlatformg = 100 + i * platfromTussen
+        let nieuwPlatform = nieuw Platform(nieuwPlatformg)
+
+
+    }
+}
 
 
 /**
