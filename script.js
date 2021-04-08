@@ -133,8 +133,8 @@ var beweegKogel = function() {
 
 var sprongSpeler = function() {
      if (keyIsPressed) {
-     if (keyIsDown(KEY_SPACEBAR)) {spelerY += 20}
-     else if (keyIsDown(KEY_DOWN)) {spelerY -=5}
+     if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 20}
+     else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
      
 }    
 };
