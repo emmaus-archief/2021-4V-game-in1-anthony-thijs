@@ -96,8 +96,6 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
   fill("red");
   ellipse(spelerX, spelerY, 50, 50);
-  fill("red");
-  ellipse(60, 635, 50, 50);
 };
 
 
@@ -122,10 +120,27 @@ var beweegKogel = function() {
  */
  var beweegSpeler = function() {
    if (keyIsPressed) {
-       if (keyIsDown(KEY_LEFT)) {spelerX, -= 3}
+       if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
    }
 };
+
+
+  var sprongHoogte = 5;
+  var speedJump = 0;
+  var KEY_SPACEBAR = 32;
+  var KEY_DOWN = 40;
+
+var sprongSpeler = function() {
+     if (keyIsPressed) {
+     if (keyIsDown(KEY_SPACEBAR)) {spelerY += 20}
+     else if (keyIsDown(KEY_DOWN)) {spelerY -=5}
+     
+}    
+};
+
+
+
 
 /**
  * Zoekt uit of de vijand is geraakt
@@ -184,6 +199,7 @@ function draw() {
       beweegKogel();
       beweegSpeler();
       beweegSpeler();
+      sprongSpeler();
       if (checkVijandGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
