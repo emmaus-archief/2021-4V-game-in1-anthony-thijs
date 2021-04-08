@@ -28,8 +28,8 @@ var spelerY = 600; // y-positie van speler
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
-var vijandX = 0;   // x-positie van vijand
-var vijandY = 0;   // y-positie van vijand
+var vijandX = 125;   // x-positie van vijand
+var vijandY = 600;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -112,8 +112,12 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
-
+if (keyIsPressed) {
+       if (keyIsDown(KEY_LEFT)) {vijandX -= 3}
+       else if (keyIsDown(KEY_RIGHT)) {vijandX += 3}
+   }
 };
+
 
 /**
  * Kijkt wat de toetsen/muis etc zijn.
