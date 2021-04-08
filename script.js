@@ -49,6 +49,12 @@ sy: 20
 
  var KEY_LEFT = 37;
  var KEY_RIGHT = 39;
+ var KEY_SPACEBAR = 32;
+ var KEY_DOWN = 40;
+ var sprongHoogte = 5;
+ var speedJump = 0;
+ 
+
 
 
 
@@ -127,6 +133,8 @@ if (keyIsPressed) {
    if (keyIsPressed) {
        if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
+       else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
+       else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
    }
 };
 
@@ -136,13 +144,6 @@ if (keyIsPressed) {
   var KEY_SPACEBAR = 32;
   var KEY_DOWN = 40;
 
-var sprongSpeler = function() {
-     if (keyIsPressed) {
-     if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
-     else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
-     
-}    
-};
 
 
 
@@ -204,7 +205,6 @@ function draw() {
       beweegKogel();
       beweegSpeler();
       beweegSpeler();
-      sprongSpeler();
       if (checkVijandGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
