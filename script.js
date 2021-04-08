@@ -78,6 +78,7 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
+    noStroke()
     fill(0,200,255)
     rect(vijandX, vijandY, 60, 60);
 };
