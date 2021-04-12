@@ -149,15 +149,6 @@ if (keyIsPressed) {
   
   
 
-function createPlatform() {
-    for (let i= 0; i < platformTel; i++) {
-        let platfromTussen = 600 / platformTel
-        let nieuwPlatformg = 100 + i * platfromTussen
-        let nieuwPlatform = nieuw Platform(nieuwPlatformg)
-
-
-    }
-}
 
 
 /**
