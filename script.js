@@ -55,6 +55,7 @@ sy: 20
  var speedJump = 0;
  
 let platformTel = 5
+let platforms = []
 
 
 
@@ -144,13 +145,29 @@ if (keyIsPressed) {
   var KEY_SPACEBAR = 32;
   var KEY_DOWN = 40;
 
+ class Platform {
+     constructor(nieuwPlatfromg){
+     this.bottom = nieuwPlatfromg
+     this.left = Math.random() * 315
+     this.visual = document.createElement('div')
+
+     const visual = this.visual
+     visual.classList.add(' platform')
+     visual.style.left = this.left + 'px'
+     visual.style.bottom = this.bottom + 'px'
+     grid.appendChild(visual)
+
+
+     }
+ }
+
 
 function createPlatform() {
     for (let i= 0; i < platformTel; i++) {
         let platfromTussen = 600 / platformTel
         let nieuwPlatformg = 100 + i * platfromTussen
-        let nieuwPlatform = nieuw Platform(nieuwPlatformg)
-
+        let nieuwPlatform = new Platform(nieuwPlatformg)
+         platforms.push(nieuwPlatform)
 
     }
 }
