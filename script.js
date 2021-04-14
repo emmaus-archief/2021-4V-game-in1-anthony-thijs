@@ -56,17 +56,18 @@ sy: 20
  var spelerSize = 25;
  
 
+var stars = function (){
 
-
-
-
-fill("green" )
+fill("green")
 rect(20, 600, width - 2 * 20, height - 2 * 20, height - 2 * 20 -575);
 if (spelerY > spelerSize/2) {
     spelerY = 600 - spelerSize/2;
     sprongHoogte = 8.5 + 2,5;
-    speedJump = 0;}
+    speedJump = 0;
+}
+
 };
+
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
