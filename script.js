@@ -53,9 +53,9 @@ sy: 20
  var KEY_DOWN = 40;
  var sprongHoogte = 5;
  var speedJump = 0;
+ var spelerSize = 25;
  
-let platformTel = 5
-let platforms = []
+
 
 
 
@@ -64,9 +64,8 @@ fill("green" )
 rect(20, 600, width - 2 * 20, height - 2 * 20, height - 2 * 20 -575);
 if (spelerY > spelerSize/2) {
     spelerY = 600 - spelerSize/2;
-    jumpHoogte = 8.5 + 2,5;
+    sprongHoogte = 8.5 + 2,5;
     speedJump = 0;}
-
 };
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
@@ -154,32 +153,8 @@ if (keyIsPressed) {
   var KEY_SPACEBAR = 32;
   var KEY_DOWN = 40;
 
- class Platform {
-     constructor(nieuwPlatfromg){
-     this.bottom = nieuwPlatfromg
-     this.left = Math.random() * 315
-     this.visual = document.createElement('div')
+ 
 
-     const visual = this.visual
-     visual.classList.add(' platform')
-     visual.style.left = this.left + 'px'
-     visual.style.bottom = this.bottom + 'px'
-     grid.appendChild(visual)
-
-
-     }
- }
-
-
-function createPlatform() {
-    for (let i= 0; i < platformTel; i++) {
-        let platfromTussen = 600 / platformTel
-        let nieuwPlatformg = 100 + i * platfromTussen
-        let nieuwPlatform = new Platform(nieuwPlatformg)
-         platforms.push(nieuwPlatform)
-
-    }
-}
 
   
   
