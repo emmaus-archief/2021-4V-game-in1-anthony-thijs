@@ -147,17 +147,6 @@ if (keyIsPressed) {
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
    }
 };
-
-
-  var sprongHoogte = 5;
-  var speedJump = 0;
-  var KEY_SPACEBAR = 32;
-  var KEY_DOWN = 40;
-
- 
-
-    }
-}
   
   
 
