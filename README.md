@@ -11,8 +11,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [x]  teken speler
 - [x] beweeg speler
-- [ ] kleine kolkjes in scherm voor meer tijd 
-- [ ] levels op scherm zitten 
+- [ ] kleine powerupjes in scherm voor meer tijd 
 - [ ]  platforms maken  
 - [ ] uitlegscherm
 
