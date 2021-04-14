@@ -51,24 +51,7 @@ sy: 20
  var spelerSize = 25;
  
 
-var stars = function(x, y){
-fill(187, 224, 255)
-//nostroke();
-rect(x, y, 5, 5);
-rect(x + 2.5, y, 5, 5);
-rect(x - 2.5, y, 5, 5);
-rect(x, y + 2.5, 5, 5);
-rect(x, y - 2.5, 5, 5)
-};
 
-
-
-fill("green")
-rect(20, 600, width - 2 * 20, height - 2 * 20, height - 2 * 20 -575);
-if (spelerY > spelerSize/2) {
-    spelerY = 600 - spelerSize/2;
-    sprongHoogte = 8.5 + 2,5;
-    speedJump = 0;
 };
 
 /* ********************************************* */
@@ -150,6 +133,7 @@ if (keyIsPressed) {
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
    }
 };
+
   
   
 
@@ -212,7 +196,7 @@ function draw() {
       beweegKogel();
       beweegSpeler();
       beweegSpeler();
-      stars();
+    
       if (checkVijandGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
