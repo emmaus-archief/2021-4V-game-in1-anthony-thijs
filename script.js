@@ -50,7 +50,21 @@ sy: 20
  var speedJump = 0;
  var spelerSize = 25;
 
- var sterren = function(x, y) {
+ 
+/* ********************************************* */
+/*      functies die je gebruikt in je game      */
+/* ********************************************* */
+
+
+/**
+ * Tekent het speelveld
+ */
+var tekenVeld = function () {
+  fill("white");
+  rect(20, 20, width - 2 * 20, height - 2 * 20);
+};
+
+var sterren = function(x, y) {
   fill(187, 224, 255)
   //noStroke();
   rect(x, y, 5, 5);
@@ -67,18 +81,6 @@ sy: 20
  rect(20, 600, width - 2 * 20, height - 2 *20 -575);
  if (spelerY > 600 - spelerSize/2) {
  spelerY = 600 - spelerSize/2;
-};
-/* ********************************************* */
-/*      functies die je gebruikt in je game      */
-/* ********************************************* */
-
-
-/**
- * Tekent het speelveld
- */
-var tekenVeld = function () {
-  fill("white");
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
 
