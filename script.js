@@ -49,11 +49,26 @@ sy: 20
  var sprongHoogte = 5;
  var speedJump = 0;
  var spelerSize = 25;
- 
 
+ var sterren = function(x, y) {
+  fill(187, 224, 255)
+  //noStroke();
+  rect(x, y, 5, 5);
+  rect(x + 2.5, y, 5, 5);
+  rect(x - 2.5, y, 5, 5);
+  rect(x, y + 2.5, 5, 5 );
+  rect(x, y - 2.5, 5, 5);
+ };
 
-};
+ sterren(300, 800);
+ sterren(600, 300);
 
+ fill("green");
+ rect(20, 600, width - 2 * 20, height - 2 *20 -575);
+ if (spelerY > 600 - spelerSize/2) {
+ spelerY = 600 - spelerSize/2;
+ jumpHoogte = 8.5 + 2.5;
+ speedJump= 0;}
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
