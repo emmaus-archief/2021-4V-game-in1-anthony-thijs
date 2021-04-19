@@ -67,8 +67,7 @@ sy: 20
  rect(20, 600, width - 2 * 20, height - 2 *20 -575);
  if (spelerY > 600 - spelerSize/2) {
  spelerY = 600 - spelerSize/2;
- jumpHoogte = 8.5 + 2.5;
- speedJump= 0;}
+};
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
