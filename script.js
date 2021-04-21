@@ -65,6 +65,7 @@ var tekenVeld = function () {
 
 
 };
+  
 
 
 /**
@@ -207,7 +208,7 @@ function draw() {
       }
 
       tekenVeld();
-    
+      
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
