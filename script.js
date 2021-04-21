@@ -74,6 +74,16 @@ var tekenBorders = function() {
         jumpHoogte = 8.5 + 2.5;
         speedJump = 0;
     }
+    if (spelerX > 1200 - spelerSize/2) {
+        spelerX = 1200 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+    if (spelerX < 100 - spelerSize/2) {
+        spelerX = 100 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
 };
 
 /**
@@ -82,9 +92,7 @@ var tekenBorders = function() {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    noStroke()
-    fill(0,200,255)
-    rect(vijandX, vijandY, 60, 60);
+    
 };
 
 
@@ -105,7 +113,8 @@ var tekenKogel = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenSpeler = function(x, y) {
-  fill("red");
+ noStroke();
+    fill("red");
   ellipse(spelerX, spelerY, 50, 50);
 };
 
