@@ -49,7 +49,7 @@ sy: 20
  var sprongHoogte = 5;
  var speedJump = 0;
  var spelerSize = 25;
-
+ var jumpHoogte = 8.5;
  var gravity = 0.9;
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
