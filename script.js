@@ -64,18 +64,8 @@ var tekenVeld = function () {
   rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
-var sterren = function(x, y) {
-  fill(187, 224, 255)
-  //noStroke();
-  rect(x, y, 5, 5);
-  rect(x + 2.5, y, 5, 5);
-  rect(x - 2.5, y, 5, 5);
-  rect(x, y + 2.5, 5, 5 );
-  rect(x, y - 2.5, 5, 5);
- };
 
- sterren(300, 800);
- sterren(600, 300);
+  
 
  fill("green");
  rect(20, 600, width - 2 * 20, height - 2 *20 -575);
@@ -224,7 +214,7 @@ function draw() {
       }
 
       tekenVeld();
-      sterren();
+    
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
