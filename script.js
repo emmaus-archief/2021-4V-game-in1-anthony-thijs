@@ -22,8 +22,8 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 59; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerX = 159; // x-positie van speler
+var spelerY = 500; // y-positie van speler
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -50,7 +50,7 @@ sy: 20
  var speedJump = 0;
  var spelerSize = 25;
 
- 
+ var gravity = 0.9;
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
@@ -66,7 +66,15 @@ var tekenVeld = function () {
 
 };
   
-
+var tekenBorders = function() {
+    fill("green")
+    rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
+    if (spelerY > 600 - spelerSize/2) {
+        spelerY = 600 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+};
 
 /**
  * Tekent de vijand
@@ -208,7 +216,7 @@ function draw() {
       }
 
       tekenVeld();
-      
+      tekenBorders();
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
