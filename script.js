@@ -61,16 +61,9 @@ sy: 20
  */
 var tekenVeld = function () {
   fill("white");
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
-};
+  rect(20, 20, width - 2 * 20, height - 2 * 20)
 
 
-  
-
- fill("green");
- rect(20, 600, width - 2 * 20, height - 2 *20 -575);
- if (spelerY > 600 - spelerSize/2) {
- spelerY = 600 - spelerSize/2;
 };
 
 
@@ -224,4 +217,4 @@ function draw() {
       }
       break;
   }
-}
+};
