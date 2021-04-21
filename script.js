@@ -66,7 +66,7 @@ var tekenVeld = function () {
 
 
   
-
+var platform = function () {
  fill("green");
  rect(20, 600, width - 2 * 20, height - 2 *20 -575);
  if (spelerY > 600 - spelerSize/2) {
@@ -214,7 +214,7 @@ function draw() {
       }
 
       tekenVeld();
-    
+      platform ();
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
@@ -224,4 +224,4 @@ function draw() {
       }
       break;
   }
-}
+};
