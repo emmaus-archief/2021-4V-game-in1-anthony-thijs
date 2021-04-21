@@ -50,7 +50,14 @@ sy: 20
  var speedJump = 0;
  var spelerSize = 25;
  var jumpHoogte = 8.5;
- var gravity = 0.9;
+ 
+ var snelheid = 0;
+ var val = 0;
+ var massa = 10;
+
+ var acceleratie = massa * 0.1;
+
+
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
@@ -62,10 +69,8 @@ sy: 20
 var tekenVeld = function () {
   fill("white");
   rect(20, 20, width - 2 * 20, height - 2 * 20)
-
-
 };
-  
+
 var tekenBorders = function() {
     fill("green")
     rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
@@ -75,6 +80,8 @@ var tekenBorders = function() {
         speedJump = 0;
     }
 };
+
+
 
 /**
  * Tekent de vijand
@@ -142,6 +149,12 @@ if (keyIsPressed) {
    }
 };
 
+var zwaartekracht = function () {
+    
+};
+
+
+
   
   
 
@@ -204,7 +217,6 @@ function draw() {
       beweegKogel();
       beweegSpeler();
       beweegSpeler();
-    
       if (checkVijandGeraakt()) {
         // punten erbij
         // nieuwe vijand maken
@@ -215,6 +227,7 @@ function draw() {
         // eventueel: nieuwe speler maken
       }
 
+     
       tekenVeld();
       tekenBorders();
       tekenVijand(vijandX, vijandY);

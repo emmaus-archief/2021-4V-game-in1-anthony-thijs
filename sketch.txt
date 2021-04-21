@@ -1,2 +1,11 @@
 Hier kan de code erin gezet worden voor later. Soort van schets plek voor je code om daarna te copy/pasten
 
+var tekenBorders = function() {
+    fill("green")
+    rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
+    if (spelerY > 600 - spelerSize/2) {
+        spelerY = 600 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+};
