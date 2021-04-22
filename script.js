@@ -84,7 +84,13 @@ var tekenBorders = function() {
         jumpHoogte = 8.5 + 2.5;
         speedJump = 0;
     }
+    if (spelerY > 1200 - spelerSize/2) {
+        spelerY = 1200 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
 };
+
 
 
 
