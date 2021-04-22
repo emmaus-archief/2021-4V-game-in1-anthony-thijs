@@ -93,7 +93,33 @@ var tekenBorders = function() {
 };
 
 
-
+var tekenPlatfrom= function() {
+    fill("blue")
+    rect(5, 20, width - 2 * 20, height - 2 * 20 - 75);
+    if (spelerY > 600 - spelerSize/2) {
+        spelerY = 600 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+     
+     if (spelerX > 1200 - spelerSize/2) {
+        spelerX = 1200 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+    
+    if (spelerX < 100 - spelerSize/2) {
+        spelerX = 100 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+    
+    if (spelerY > 1200 - spelerSize/2) {
+        spelerY = 1200 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+};
 
 /**
  * Tekent de vijand
@@ -241,6 +267,7 @@ function draw() {
      
       tekenVeld();
       tekenBorders();
+      tekenPlatfrom();
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
