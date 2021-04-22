@@ -51,7 +51,6 @@ sy: 20
  var spelerSize = 25;
  var jumpHoogte = 8.5;
  
-var val = 10;
 
 
 /* ********************************************* */
@@ -154,10 +153,6 @@ if (keyIsPressed) {
    }
 };
 
-var zwaartekracht = function () {
-    
-};
-
 
 
   
@@ -220,7 +215,6 @@ function draw() {
     case SPELEN:
       beweegVijand();
       beweegKogel();
-      beweegSpeler();
       beweegSpeler();
       if (checkVijandGeraakt()) {
         // punten erbij
