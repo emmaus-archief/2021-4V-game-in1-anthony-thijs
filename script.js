@@ -51,11 +51,7 @@ sy: 20
  var spelerSize = 25;
  var jumpHoogte = 8.5;
  
- var snelheid = 0;
- var val = 0;
- var massa = 10;
-
- var acceleratie = massa * 0.1;
+var val = 10;
 
 
 /* ********************************************* */
@@ -121,8 +117,8 @@ var tekenKogel = function(x, y) {
  */
 var tekenSpeler = function(x, y) {
  noStroke();
-    fill("red");
-  ellipse(spelerX, spelerY, 50, 50);
+ fill("red");
+ ellipse(spelerX, spelerY, 50, 50);
 };
 
 
