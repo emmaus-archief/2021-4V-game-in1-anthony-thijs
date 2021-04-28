@@ -38,3 +38,18 @@ var tekenPlatfrom= function() {
     }
 };
 };
+
+var beweegKogel = function() {
+if (keyIsPressed) {
+       if (keyIsDown(KEY_LEFT)) {vijandX -= 3}
+       else if (keyIsDown(KEY_RIGHT)) {vijandX += 3}
+   }
+};
+
+var tekenPlatfrom = function() {
+     var xPlatform = random
+     var yPlatfrom = randowm
+     fill(blue)
+     rect(xPlatform, yPlatfrom, 70, 40);
+    
+}

@@ -91,36 +91,43 @@ var tekenBorders = function() {
         speedJump = 0;
     }
 };
+var tekenPlatfrom = function() {
+    var y = 0
+    while (y < 1000) {
+    var xPlatform = random(10, 1000);
+     var yPlatform = random(10, 1000);
+     fill("red")
+    var speedPlatfrom = 5;
+     rect(xPlatform, yPlatform, 70, 40);
 
-
-var tekenPlatfrom= function() {
-    fill("blue")
-    rect(5, 20, width - 2 * 20, height - 2 * 20 - 75);
-    if (spelerY > 600 - spelerSize/2) {
-        spelerY = 600 - spelerSize/2;
+     y += 10;
+    }
+  if (yPlatform > 600 - spelerSize/2) {
+        yPlatform= 600 - spelerSize/2;
         jumpHoogte = 8.5 + 2.5;
         speedJump = 0;
     }
-     
-     if (spelerX > 1200 - spelerSize/2) {
-        spelerX = 1200 - spelerSize/2;
+    if (xPlatform > 1200 - spelerSize/2) {
+        xPlatform = 1200 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+    if (xPlatform < 100 - spelerSize/2) {
+        xPlatform = 100 - spelerSize/2;
+        jumpHoogte = 8.5 + 2.5;
+        speedJump = 0;
+    }
+    if (yPlatform > 1200 - spelerSize/2) {
+        yPlatform = 1200 - spelerSize/2;
         jumpHoogte = 8.5 + 2.5;
         speedJump = 0;
     }
     
-    if (spelerX < 100 - spelerSize/2) {
-        spelerX = 100 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    
-    if (spelerY > 1200 - spelerSize/2) {
-        spelerY = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
 };
 
+ 
+    
+    
 /**
  * Tekent de vijand
  * @param {number} x x-coördinaat
@@ -166,10 +173,7 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
-if (keyIsPressed) {
-       if (keyIsDown(KEY_LEFT)) {vijandX -= 3}
-       else if (keyIsDown(KEY_RIGHT)) {vijandX += 3}
-   }
+
 };
 
 
@@ -276,5 +280,6 @@ function draw() {
         spelStatus = GAMEOVER;
       }
       break;
-  }
+    }
 };
+
