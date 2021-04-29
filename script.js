@@ -157,6 +157,7 @@ if (keyIsPressed) {
        else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
    }
+
 };
 
 
