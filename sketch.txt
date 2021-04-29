@@ -53,3 +53,8 @@ var tekenPlatfrom = function() {
      rect(xPlatform, yPlatfrom, 70, 40);
     
 }
+
+var zwaartekracht = function() {
+    while(spelerY > height - 2 * 20 - 575);
+    spelerY -= 10;
+}
