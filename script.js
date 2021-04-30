@@ -101,27 +101,7 @@ var tekenPlatfrom = function() {
 
      y += 10;
     }
-  if (yPlatform > 600 - spelerSize/2) {
-        yPlatform= 600 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    if (xPlatform > 1200 - spelerSize/2) {
-        xPlatform = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    if (xPlatform < 100 - spelerSize/2) {
-        xPlatform = 100 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    if (yPlatform > 1200 - spelerSize/2) {
-        yPlatform = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    
+  
 };
 
  

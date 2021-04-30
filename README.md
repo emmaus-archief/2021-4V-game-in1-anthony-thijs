@@ -12,7 +12,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x]  teken speler
 - [x] beweeg speler
 - [ ] kleine powerupjes/punten in scherm voor meer tijd 
-- [ ]  platforms maken  
+- [x]  platforms maken  
 - [ ] uitlegscherm
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
