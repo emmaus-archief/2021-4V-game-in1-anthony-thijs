@@ -55,9 +55,12 @@ var tekenPlatfrom = function() {
 }
 
 var zwaartekracht = function() {
-    while(spelerY > height - 2 * 20 - 575);
-    spelerY -= 10;
-}
+    if(keyReleased) {
+        while(spelerY > 100 )
+        spelerY -= 10;
+    }
+};
+
 
 
 

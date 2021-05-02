@@ -167,17 +167,7 @@ var beweegKogel = function() {
        else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
    }
-
 };
-
-
-
-
-
-  
-  
-
-
 
 /**
  * Zoekt uit of de vijand is geraakt
