@@ -99,7 +99,7 @@ var tekenPlatfrom = function() {
     var speedPlatfrom = 5;
      rect(xPlatform, yPlatform, 70, 40);
 
-     y += 10;
+     y += 1;
     }
   
 };
@@ -161,11 +161,12 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
  var beweegSpeler = function() {
-   if (keyIsPressed) {
+    if (keyIsPressed) 
        if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
        else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
+       
    }
 };
 
@@ -233,6 +234,8 @@ function draw() {
       if (checkSpelerGeraakt()) {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
+        
+
       }
 
      
