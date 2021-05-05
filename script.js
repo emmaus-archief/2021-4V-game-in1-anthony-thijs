@@ -99,7 +99,7 @@ var tekenPlatfrom = function() {
     var speedPlatfrom = 5;
      rect(xPlatform, yPlatform, 70, 40);
 
-     y += 1;
+     y += 10000;
     }
   
 };
@@ -167,8 +167,8 @@ var beweegKogel = function() {
        else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
        
-   }
-};
+   };
+
 
 /**
  * Zoekt uit of de vijand is geraakt
