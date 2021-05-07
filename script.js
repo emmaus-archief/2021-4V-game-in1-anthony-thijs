@@ -21,7 +21,12 @@ const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
-
+const EERSTELEVEL = 0;
+const TWEEDELEVEL = 1;
+const DERDELEVEL = 2;
+var level = EERSTELEVEL;
+var spawnX = 159;
+var spawnY = 500;
 var spelerX = 159; // x-positie van speler
 var spelerY = 500; // y-positie van speler
 
@@ -47,11 +52,28 @@ sy: 20
  var KEY_SPACEBAR = 32;
  var KEY_DOWN = 40;
  var sprongHoogte = 5;
- var speedJump = 0;
+ var speedJump = 20;
  var spelerSize = 25;
  var jumpHoogte = 8.5;
- 
 
+ var platformSnelheidY = [3, 3, 3, 3];
+ var platformSnelheidX = [3, 3, 3, 3];
+
+ var platformHeight = 60;
+ var platformBreedte = 125;
+ var platformSize = [50, 100, 200, 400];
+ 
+ var platformX = [40, 300, 600, 800, 1025];
+ var platformY = [500, 500, 500, 500, 500];
+
+ var puntenX = [300, 600, 800, 400, 700];
+ var PuntenY = [450, 450, 450, 650, 200];
+ var punten = 0;
+ var highScore = 0;
+ var levens = 8;
+
+var schadePlatformX = [175, 425, 675, 925];
+var schadePlatformY = [250, 250, 250, 250];
 
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
@@ -71,42 +93,77 @@ var tekenBorders = function() {
     rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
     if (spelerY > 600 - spelerSize/2) {
         spelerY = 600 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
+       
     }
     if (spelerX > 1200 - spelerSize/2) {
         spelerX = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
+      
     }
     if (spelerX < 100 - spelerSize/2) {
         spelerX = 100 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
+       
     }
     if (spelerY > 1200 - spelerSize/2) {
         spelerY = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
+     
+    }
+};
+var platform = function(x, y, w, h) {
+if (spelerX > x - spelerSize/2 &&
+    spelerX < x + w + spelerSize/2 &&
+    spelerY > y - spelerSize/2 &&
+    spelerY < y + spelerSize/2
+    ) 
+
+     {spelerY = y - spelerSize/2;
+        jumpHoogte = 6.5 + 4.5;
         speedJump = 0;
-    }
-};
-var tekenPlatfrom = function() {
-    var y = 0
-    while (y < 1000) {
-    var xPlatform = random(10, 1000);
-     var yPlatform = random(10, 1000);
-     fill("red")
-    var speedPlatfrom = 5;
-     rect(xPlatform, yPlatform, 70, 40);
+     };
 
-     y += 10000;
-    }
-  
+if (spelerX > x - spelerSize/2 &&
+    spelerX < x + w + spelerSize/2 &&
+    spelerY > y - spelerSize/2 &&
+    spelerY < y + 5 + h + spelerSize/2
+    ) 
+     
+     {spelerY = y + 5 + h + spelerSize/2;
+      speedJump = 20;
+     };
+
+if (spelerX > x - spelerSize/2 &&
+    spelerX < x + 5 + w + spelerSize/2 &&
+    spelerY > y - spelerSize/2 &&
+    spelerY < y + h + spelerSize/2
+    ) 
+     
+     {spelerX = x + 5 + w + spelerSize/2;
+     };
+
+if (spelerX > x - 5 - spelerSize/2 &&
+    spelerX < x + w + spelerSize/2 &&
+    spelerY > y - spelerSize/2 &&
+    spelerY < y + h + spelerSize/2
+    ) 
+     
+     {spelerX = x - 5 - spelerSize/2;
+     };
+    
+    fill("blue")
+    rect(x, y, w, h)
 };
 
- 
+
+var tekenPlatform = function(x,y,w,h) {
+  fill("blue");
+  rect(platformX[0], y, w, h)
+};
+
+var damagePlatformX = [175, 425, 675, 925];
+var damagePlatformY = [250, 250, 250, 250];
+
     
-    
+
+
 /**
  * Tekent de vijand
  * @param {number} x x-coördinaat
@@ -168,6 +225,62 @@ var beweegKogel = function() {
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
        
    };
+var beweegPlatform = function(x,y) {
+    // platformX[x] += platformSpeed;
+    // damagePlatformY[y] += platformSpeedY[y];
+    // damagePlatformX[x] += platformSpeedX[x];
+
+    damagePlatformY[y] += platformSnelheidY[y];
+    damagePlatformX[x] += platformSnelheidY[x];
+
+    if (damagePlatformY[y] > 550) {
+        platformSnelheidY[y] = -3;
+    }
+    
+    if (damagePlatformY[y] < 350) {
+        platformSnelheidY[y] = 3;
+    }
+
+    
+
+};
+var Punten = function(x, y, w, h, p)
+{if (spelerX > x - 0.375*w && 
+        spelerX < x + 1*w && 
+        spelerY > y - 0.375*h && 
+        spelerY < y + 1*w)
+
+        {score += 1;
+            puntenX.splice(p, 1);
+            PuntenY.splice(p, 1);
+         
+    }
+
+      fill(187,224,255)
+      ellipse(x, y, w, h);
+};
+
+
+
+
+
+
+var schadePlatform = function(x, y, w, h){
+    if (spelerX > x- spelerSize/2 && 
+        spelerX < x + w + spelerSize/2 &&
+        spelerY > y - spelerSize/2 &&
+        spelerY < y + h + spelerSize/2)
+        
+        
+        { levens -= 1;
+         spelerX = spawnX
+         spelerY = spawnY
+         speedJump = 20;
+        }
+        fill(150, 0, 0);
+        rect(x, y, w, h);
+      
+};
 
 
 /**
@@ -196,8 +309,9 @@ var checkSpelerGeraakt = function() {
  * @returns {boolean} true als het spel is afgelopen
  */
 var checkGameOver = function() {
-    
-  return false;
+    if (levens ===0)
+    {return true}
+  else return false;
 };
 
 
@@ -222,6 +336,12 @@ function setup() {
  */
 function draw() {
   switch (spelStatus) {
+    case UITLEG:
+
+
+    break;
+    
+    
     case SPELEN:
       beweegVijand();
       beweegKogel();
@@ -234,22 +354,77 @@ function draw() {
       if (checkSpelerGeraakt()) {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
-        
+        levens -= 1;
+        spelerX = 25;
 
       }
 
-     
       tekenVeld();
       tekenBorders();
-      tekenPlatfrom();
+      tekenPlatform();
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
+switch(level) {
+
+      case EERSTELEVEL:
+
+
+      for(var i = 0; i <damagePlatformX.length; i++) {
+      schadePlatform(damagePlatformX[i], damagePlatformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <platformX.length; i++) {
+      platform(platformX[i], platformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <puntenX.length; i++) {
+      Punten(puntenX[i], PuntenY[i], 20, 20, i)
+      }
+
+      for(var i = 0; i <damagePlatformY.length; i++) {
+      beweegPlatform(i,i)
+    }
+      
+    schadePlatform(20, 600 - 5, width - 2*20, height - 2*20 - 575 + 5)
+}
+
+      textSize(30)
+      fill(200, 200, 200)
+      text("levens = " + levens, 40, 40, 200, 200)
+      text("score = " + score, 40, 80, 400, 200)
+      spelerY += 3.25
 
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }
       break;
-    }
-};
+
+    case GAMEOVER:
+        background(0,0,0);
+        textSize(75)
+        fill(255, 0, 0)
+        text("game over", 640 - 175, 360, 700, 700);
+        text("score: " + score, 640 - 175, 460, 700, 700);
+
+        if (score > highScore) {
+            highScore = score;
+        }
+
+        text ("Highscore: " + highScore, 640 - 175, 560, 700, 700);
+        level = EERSTELEVEL;
+        spelerX = 100;
+        spelerY = 500;
+        spawnX = 100;
+        spawnY = 500
+
+    if (keyIsPressed && keyCode === 13) {
+        spelStatus = SPELEN;
+         levens = 5;
+        score = 0;
+        puntenX = [300, 550, 800, 400, 700];
+        PuntenY = [450, 450, 450, 600, 200];
+       }
+  }
+}
 

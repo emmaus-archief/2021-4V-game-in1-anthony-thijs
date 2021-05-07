@@ -62,8 +62,6 @@ var zwaartekracht = function() {
 };
 
 
-
-
 if (yPlatform > 600 - spelerSize/2) {
         yPlatform= 600 - spelerSize/2;
         jumpHoogte = 8.5 + 2.5;
@@ -85,3 +83,58 @@ if (yPlatform > 600 - spelerSize/2) {
         speedJump = 0;
     }
     
+
+    var platform = function(x, y, w, h) {
+         if (spelerX > x - spelerSize/ 2 &&
+         spelerX < x + w spelerSize/2 &&
+         spelerY > y - spelerSize/2 &&
+         spelerY < y + spelerSize/2
+         )
+    }
+     var platform = function(x, y, w, h) {
+         if (spelerX > x - spelerSize/ 2 &&
+         spelerX < x + w spelerSize/2 &&
+         spelerY > y - spelerSize/2 &&
+         spelerY < y + spelerSize/2
+         )
+    }
+
+var Hsprong = 6.5 + 5.5;
+var Ssprong = 0;
+
+var sprongSpeler = function() {
+    spelerY -= Hsprong;
+    Ssprong += 1
+}
+ if (Ssprong === 5) { Hsprong = 3 + 5.5;
+}
+if (Ssprong === 10) { Hsprong = 2 + 5.5;
+}
+if (Ssprong === 20) { Hsprong = 1 + 5.5;
+}
+if (Ssprong === 30) { Hsprong = 0;
+}
+
+  /*if (spelerX > 1260 - spelerSize/2) {
+          level = TWEEDELEVEL;
+          spawnX = 100;
+          spawnY = 500;
+          spelerX = 20 + spelerSize/2;
+      }
+      if (spelerX < 20 + spelerSize/2) {
+          level = DERDELEVEL;
+          spawnX = 1280 - 100;
+          spawnY = 500;
+          spelerX = 1260 - spelerSize/2;
+      }
+      break;
+    
+      case TWEEDELEVEL:
+      damagePlatform(300, 500, 300, 70)
+      break;
+      case DERDELEVEL:
+      platform(550, 300, platformSize[1], platformSize[0])
+      platform(1000, 40, platformSize[1], platformSize[0])
+      platform(300, 500, platformSize[1], platformSize[0])
+      damagePlatform(700, 500, 300, 70)
+    }*/
