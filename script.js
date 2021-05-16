@@ -21,10 +21,11 @@ const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
-const EERSTELEVEL = 0;
-const TWEEDELEVEL = 1;
+const LEVELONE = 0;
+const LEVELTWO = 1;
 const DERDELEVEL = 2;
-var level = EERSTELEVEL;
+var level = LEVELONE;
+var level = LEVELTWO;
 var spawnX = 159;
 var spawnY = 500;
 var spelerX = 159; // x-positie van speler
@@ -54,17 +55,17 @@ sy: 20
  var sprongHoogte = 5;
  var speedJump = 20;
  var spelerSize = 25;
- var jumpHoogte = 8.5;
+ var jumpHoogte = 6.5;
 
- var platformSnelheidY = [3, 3, 3, 3];
- var platformSnelheidX = [3, 3, 3, 3];
+ var platformSnelheidY = [2, 2, 2, 2];
+ var platformSnelheidX = [2, 2, 2, 2];
 
  var platformHeight = 60;
- var platformBreedte = 125;
- var platformSize = [50, 100, 200, 400];
+ var platformBreedte = 225;
+ var platformSize = [200, 150, 220, 450];
  
- var platformX = [40, 300, 600, 800, 1025];
- var platformY = [500, 500, 500, 500, 500];
+ var platformX = [30, 290, 470, 660, 955];
+ var platformY = [520, 540, 560, 580, 600];
 
  var puntenX = [300, 600, 800, 400, 700];
  var PuntenY = [450, 450, 450, 650, 200];
@@ -72,7 +73,7 @@ sy: 20
  var highScore = 0;
  var levens = 8;
 
-var schadePlatformX = [175, 425, 675, 925];
+var schadePlatformX = [165, 325, 475, 625];
 var schadePlatformY = [250, 250, 250, 250];
 
 /* ********************************************* */
@@ -158,8 +159,8 @@ var tekenPlatform = function(x,y,w,h) {
   rect(platformX[0], y, w, h)
 };
 
-var damagePlatformX = [175, 425, 675, 925];
-var damagePlatformY = [250, 250, 250, 250];
+var schadePlatformX = [200, 475, 725, 975];
+var schadePlatformY = [300, 350, 270, 350];
 
     
 
@@ -193,7 +194,7 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
  noStroke();
  fill("red");
- ellipse(spelerX, spelerY, 50, 50);
+ ellipse(spawnX, spawnY, 50, 50);
 };
 
 
@@ -222,7 +223,7 @@ var beweegKogel = function() {
        if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
        else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
-       else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
+       
        
    };
 var beweegPlatform = function(x,y) {
@@ -230,15 +231,15 @@ var beweegPlatform = function(x,y) {
     // damagePlatformY[y] += platformSpeedY[y];
     // damagePlatformX[x] += platformSpeedX[x];
 
-    damagePlatformY[y] += platformSnelheidY[y];
-    damagePlatformX[x] += platformSnelheidY[x];
+    schadePlatformY[y] += platformSnelheidY[y];
+    schadePlatformX[x] += platformSnelheidY[x];
 
-    if (damagePlatformY[y] > 550) {
-        platformSnelheidY[y] = -3;
+    if (schadePlatformY[y] > 550) {
+        platformSnelheidY[y] = -2;
     }
     
-    if (damagePlatformY[y] < 350) {
-        platformSnelheidY[y] = 3;
+    if (schadePlatformY[y] < 350) {
+        platformSnelheidY[y] = 2;
     }
 
     
@@ -259,10 +260,6 @@ var Punten = function(x, y, w, h, p)
       fill(187,224,255)
       ellipse(x, y, w, h);
 };
-
-
-
-
 
 
 var schadePlatform = function(x, y, w, h){
@@ -367,11 +364,11 @@ function draw() {
       tekenSpeler(spelerX, spelerY);
 switch(level) {
 
-      case EERSTELEVEL:
+      case LEVELONE:
 
 
-      for(var i = 0; i <damagePlatformX.length; i++) {
-      schadePlatform(damagePlatformX[i], damagePlatformY[i], 100, 50)
+      for(var i = 0; i <schadePlatformX.length; i++) {
+      schadePlatform(schadePlatformX[i], schadePlatformY[i], 100, 50)
       }
 
       for(var i = 0; i <platformX.length; i++) {
@@ -382,7 +379,7 @@ switch(level) {
       Punten(puntenX[i], PuntenY[i], 20, 20, i)
       }
 
-      for(var i = 0; i <damagePlatformY.length; i++) {
+      for(var i = 0; i <schadePlatformY.length; i++) {
       beweegPlatform(i,i)
     }
       
@@ -399,7 +396,12 @@ switch(level) {
         spelStatus = GAMEOVER;
       }
       break;
-
+      case LEVELTWO:
+     
+     
+     
+     
+      break;
     case GAMEOVER:
         background(0,0,0);
         textSize(75)
@@ -412,7 +414,7 @@ switch(level) {
         }
 
         text ("Highscore: " + highScore, 640 - 175, 560, 700, 700);
-        level = EERSTELEVEL;
+        level = LEVELONE;
         spelerX = 100;
         spelerY = 500;
         spawnX = 100;
@@ -422,8 +424,8 @@ switch(level) {
         spelStatus = SPELEN;
          levens = 5;
         score = 0;
-        puntenX = [300, 550, 800, 400, 700];
-        PuntenY = [450, 450, 450, 600, 200];
+         puntenX = [300, 600, 800, 400, 700];
+         PuntenY = [450, 450, 450, 650, 200];
        }
   }
 }

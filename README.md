@@ -11,12 +11,12 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [x]  teken speler
 - [x] beweeg speler
-- [ ] kleine powerupjes/punten in scherm voor meer tijd 
+- [x] kleine powerupjes/punten in scherm voor meer tijd 
 - [x]  platforms maken  
 - [ ] uitlegscherm
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
+- [ ] *platformtegenstander die schade doet*
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
