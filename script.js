@@ -164,6 +164,15 @@ var schadePlatformY = [300, 350, 270, 350];
 
     
 
+var achtergrondX = [250, 745, 300, 225, 465, 780, 0, 0, 0, 0, 0, 0, 0, 0];
+var achtergrondY = [100, 200, 150, 40, 180, 30, 95, 0, 0, 0, 0, 0, 0, 0, 0];
+
+var zon = function(x,y)
+ ellipse(achtergrondX[x], achtergrondY[y], 30, 30)
+}
+
+
+};
 
 /**
  * Tekent de vijand
