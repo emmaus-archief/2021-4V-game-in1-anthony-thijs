@@ -348,13 +348,7 @@ function draw() {
     text("Blauwe platforms zijn veilig en bruine platforms brengen schade op", 640 - 175, 410, 700, 700);
     text("Raak de vloer aan en je bent dood", 640 - 175, 510, 700, 700);
 
-    if (keyIsPressed && keyCode === 13) {
-    spelStatus = SPELEN;
-    levens = 5;
-    score = 0;
-    PuntenX = [300, 600, 800, 400, 700];
-    PuntenY = [450, 450, 450, 650, 200];
-
+    
     }
     break;
     
