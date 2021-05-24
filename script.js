@@ -336,9 +336,26 @@ function setup() {
 function draw() {
   switch (spelStatus) {
     case UITLEG:
-        
+        background(0,0,0);
+    textSize(65)
+    fill(255, 0, 0)
+    text("The Floor is Lava", 640 - 175, 10, 700, 700);
+    textSize(60)
+    text("Controls", 640 - 175, 110, 700, 700);
+    textSize(40)
+    text("Gebruik de pijltoetsen naar links, rechts en beneden om te bewegen", 640 - 175, 210, 700, 700);
+    text("Gebruik de spacebar om te zweven", 640 - 175, 310, 700, 700);
+    text("Blauwe platforms zijn veilig en bruine platforms brengen schade op", 640 - 175, 410, 700, 700);
+    text("Raak de vloer aan en je bent dood", 640 - 175, 510, 700, 700);
 
+    if (keyIsPressed && keyCode === 13) {
+    spelStatus = SPELEN;
+    levens = 5;
+    score = 0;
+    PuntenX = [300, 600, 800, 400, 700];
+    PuntenY = [450, 450, 450, 650, 200];
 
+    }
     break;
     
     
