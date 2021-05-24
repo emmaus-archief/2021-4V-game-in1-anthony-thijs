@@ -21,15 +21,15 @@ const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
-const LEVELONE = 0;
-const LEVELTWO = 1;
-const DERDELEVEL = 2;
-var level = LEVELONE;
-var level = LEVELTWO;
+const LEVELEEN = 0;
+const LEVELTWEE = 1;
+const LEVELDRIE = 2;
+var level = LEVELEEN;
+
 var spawnX = 159;
 var spawnY = 500;
 var spelerX = 159; // x-positie van speler
-var spelerY = 500; // y-positie van speler
+var spelerY = 390; // y-positie van speler
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -64,10 +64,10 @@ sy: 20
  var platformBreedte = 225;
  var platformSize = [200, 150, 220, 450];
  
- var platformX = [30, 290, 470, 660, 955];
- var platformY = [520, 540, 560, 580, 600];
+var platformX = [50, 300, 550, 800, 1050];
+var platformY = [500, 500, 500, 500, 500]
 
- var puntenX = [300, 600, 800, 400, 700];
+ var PuntenX = [300, 600, 800, 400, 700];
  var PuntenY = [450, 450, 450, 650, 200];
  var punten = 0;
  var highScore = 0;
@@ -162,11 +162,6 @@ var tekenPlatform = function(x,y,w,h) {
 var schadePlatformX = [200, 475, 725, 975];
 var schadePlatformY = [300, 350, 270, 350];
 
-    
-
-var achtergrondX = [250, 745, 300, 225, 465, 780, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-var achtergrondY = [100, 200, 150, 40, 180, 30, 95, 0, 0, 0, 0, 0, 0, 0, 0];
-
 
 /**
  * Tekent de vijand
@@ -197,7 +192,7 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
  noStroke();
  fill("red");
- ellipse(spawnX, spawnY, 50, 50);
+ ellipse(spelerX, spelerY, 50, 50);
 };
 
 
@@ -226,6 +221,7 @@ var beweegKogel = function() {
        if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
        else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
+       else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
        
        
    };
@@ -255,7 +251,7 @@ var Punten = function(x, y, w, h, p)
         spelerY < y + 1*w)
 
         {score += 1;
-            puntenX.splice(p, 1);
+            PuntenX.splice(p, 1);
             PuntenY.splice(p, 1);
          
     }
@@ -273,8 +269,8 @@ var schadePlatform = function(x, y, w, h){
         
         
         { levens -= 1;
-         spelerX = spawnX
-         spelerY = spawnY
+         spelerX = spelerX
+         spelerY = spelerY
          speedJump = 20;
         }
         fill(150, 0, 0);
@@ -325,7 +321,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('Red');
+  background('red');
 }
 
 
@@ -355,7 +351,7 @@ function draw() {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
         levens -= 1;
-        spelerX = 25;
+        spawnX = 25;
 
       }
 
@@ -367,7 +363,7 @@ function draw() {
       tekenSpeler(spelerX, spelerY);
 switch(level) {
 
-      case LEVELONE:
+      case LEVELEEN:
 
 
       for(var i = 0; i <schadePlatformX.length; i++) {
@@ -378,8 +374,8 @@ switch(level) {
       platform(platformX[i], platformY[i], 100, 50)
       }
 
-      for(var i = 0; i <puntenX.length; i++) {
-      Punten(puntenX[i], PuntenY[i], 20, 20, i)
+      for(var i = 0; i <PuntenX.length; i++) {
+      Punten(PuntenX[i], PuntenY[i], 20, 20, i)
       }
 
       for(var i = 0; i <schadePlatformY.length; i++) {
@@ -399,7 +395,7 @@ switch(level) {
         spelStatus = GAMEOVER;
       }
       break;
-      case LEVELTWO:
+      
      
      
      
@@ -417,17 +413,17 @@ switch(level) {
         }
 
         text ("Highscore: " + highScore, 640 - 175, 560, 700, 700);
-        level = LEVELONE;
-        spelerX = 100;
+        level = LEVELEEN;
+        spelerX = 159;
         spelerY = 500;
-        spawnX = 100;
-        spawnY = 500
+        spawnX = 159;
+        spawnY = 500;
 
     if (keyIsPressed && keyCode === 13) {
         spelStatus = SPELEN;
          levens = 5;
         score = 0;
-         puntenX = [300, 600, 800, 400, 700];
+         PuntenX = [300, 600, 800, 400, 700];
          PuntenY = [450, 450, 450, 650, 200];
        }
   }
