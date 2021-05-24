@@ -138,3 +138,15 @@ if (Ssprong === 30) { Hsprong = 0;
       platform(300, 500, platformSize[1], platformSize[0])
       damagePlatform(700, 500, 300, 70)
     }*/
+
+    var zon = function(x,y) {
+    ellipse(achtergrondX[x], achtergrondY[y], 15, 15)
+
+    if (achtergrondY[y] > 750) {
+        achtergrondY[y] = random(20, 250)
+        achtergrondX[x] = random(20, 1280)
+    }
+
+    achtergrondX[x] += 1.5
+    achtergrondY[y] += 3.5
+ };
