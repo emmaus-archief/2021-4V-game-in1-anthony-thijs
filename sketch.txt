@@ -171,3 +171,14 @@ background(0,0,0);
     PuntenX = [300, 600, 800, 400, 700];
     PuntenY = [450, 450, 450, 650, 200];
        }
+
+
+/*Plaatjes*/
+
+var imgPlatform = 0;
+
+function preload() {
+  imgPlatform = loadImage('platform.png');
+};
+
+image('platform.png', platform[0], y, w, h);

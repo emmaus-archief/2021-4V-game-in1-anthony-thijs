@@ -76,6 +76,8 @@ var platformY = [500, 500, 500, 500, 500]
 var schadePlatformX = [165, 325, 475, 625];
 var schadePlatformY = [250, 250, 250, 250];
 
+
+
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
@@ -158,8 +160,8 @@ if (spelerX > x - 5 - spelerSize/2 &&
 /*Tekent veiligheids platformen*/
 
 var tekenPlatform = function(x,y,w,h) {
-  fill("blue");
-  rect(platformX[0], y, w, h)
+    fill("blue");
+    rect(platformX[0], y, w, h);
 };
 
 var schadePlatformX = [200, 475, 725, 975];
