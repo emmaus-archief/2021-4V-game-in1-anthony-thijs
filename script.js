@@ -89,6 +89,8 @@ var tekenVeld = function () {
   rect(20, 20, width - 2 * 20, height - 2 * 20)
 };
 
+/*Tekent borders voor het speelveld*/
+
 var tekenBorders = function() {
     fill("green")
     rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
@@ -153,6 +155,7 @@ if (spelerX > x - 5 - spelerSize/2 &&
     rect(x, y, w, h)
 };
 
+/*Tekent veiligheids platformen*/
 
 var tekenPlatform = function(x,y,w,h) {
   fill("blue");
@@ -333,6 +336,7 @@ function setup() {
 function draw() {
   switch (spelStatus) {
     case UITLEG:
+        
 
 
     break;
@@ -361,6 +365,7 @@ function draw() {
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
+
 switch(level) {
 
       case LEVELEEN:
