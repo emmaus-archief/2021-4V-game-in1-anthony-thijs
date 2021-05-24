@@ -167,12 +167,17 @@ var schadePlatformY = [300, 350, 270, 350];
 var achtergrondX = [250, 745, 300, 225, 465, 780, 0, 0, 0, 0, 0, 0, 0, 0];
 var achtergrondY = [100, 200, 150, 40, 180, 30, 95, 0, 0, 0, 0, 0, 0, 0, 0];
 
-var zon = function(x,y)
- ellipse(achtergrondX[x], achtergrondY[y], 30, 30)
-}
+var zon = function(x,y) {
+    ellipse(achtergrondX[x], achtergrondY[y], 10, 10)
 
+    if (achtergrondY[y] > 700) {
+        achtergrondY[y] = random(20, 200)
+        achtergrondX[x] = random(20, 1280)
+    }
 
-};
+    achtergrondX[x] += 2
+    achtergrondY[y] += 3.5
+ };
 
 /**
  * Tekent de vijand

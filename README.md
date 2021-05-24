@@ -10,18 +10,20 @@ Gemaakt door:
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [x]  teken speler
-- [x] beweeg speler
+- [x] beweeg speler (door pijltjes)
 - [x] kleine powerupjes/punten in scherm voor meer tijd 
-- [x]  platforms maken  
+- [x] platforms maken  
 - [ ] uitlegscherm
+- [x]  levens er af en bij 
+
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *platformtegenstander die schade doet*
+- [x] platformtegenstander die schade doet
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
-- [ ] klok in scherm van tijd
+- [ ] een beweegende achtergrond 
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
