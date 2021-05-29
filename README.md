@@ -11,21 +11,18 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [x]  teken speler
 - [x] beweeg speler (door pijltjes)
-- [x] kleine powerupjes/punten in scherm voor meer tijd 
+- [x] kleine powerupjes/punten
 - [x] platforms maken  
 - [ ] uitlegscherm
 - [x]  levens er af en bij 
+- [x] tegenplatformen 
 
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [x] platformtegenstander die schade doet
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+- [x] achtergrond die miss beweegt 
+- [ ] 
 
-Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
-- [ ] een beweegende achtergrond 
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
 
 ## Credits
 - Game template van het Emmauscollege Rotterdam https://github.com/emmauscollege/4HV-game-template
