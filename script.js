@@ -349,13 +349,12 @@ function draw() {
 
     text("Blauwe platforms zijn veilig bruine platforms brengen schade op", 325, 265, 700, 700)
 
-    text(" bruine platforms brengen schade op", 325, 375, 900, 700 )
+    text("Hier links staan hoe alle platformen en punter eruit zien", 325, 375, 900, 700 )
 
-    text("Dit is een punt. als je deze oppakt dan gaat je score plus 1.", 325, 550, 1000, 700)
 
-    platform(150, 250, 100, 50)
-    schadePlatform(150, 375, 100, 50)
-    Punten(200, 550, 20, 20)
+    platform(170, 250, 100, 50)
+    schadePlatform(170, 375, 100, 50)
+    Punten(170, 540, 20, 20)
    
     if (keyIsPressed && keyCode === 13) {
         spelStatus = SPELEN;}
