@@ -340,19 +340,7 @@ function draw() {
   switch (spelStatus) {
     case UITLEG:
  if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
-    fill(175, 175, 175)
-    textSize(30)
-    text("The Floor is Lava", 640 - 175, 10, 700, 700);
-    text("Controls", 640 - 175, 110, 700, 700);
-    text("Gebruik de pijltoetsen naar links, rechts en beneden om te bewegen", 640 - 175, 210, 700, 700);
-    text("Gebruik de spacebar om te zweven", 640 - 175, 310, 700, 700);
-    text("Blauwe platforms zijn veilig en bruine platforms brengen schade op", 640 - 175, 410, 700, 700);
-    text("Raak de vloer aan en je bent dood", 640 - 175, 510, 700, 700);
-    
-
-    platform(150, 250, 100, 50)
-    schadePlatform(150, 375, 100, 50)
-    Punten(200, 550, 20, 20)
+   
     break;
     
     
@@ -416,6 +404,48 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
 
+      switch(level) {
+
+      case LEVELTWEE:
+ if (keyIsPressed && keyCode === 8) {
+        spelStatus = SPELEN;
+         levens = 5;
+        score = 0;
+         PuntenX = [300, 600, 800, 400, 700];
+         PuntenY = [450, 450, 450, 650, 200];
+       }
+
+      for(var i = 0; i <schadePlatformX.length; i++) {
+      schadePlatform(schadePlatformX[i], schadePlatformY[i], 70, 30)
+      }
+
+      for(var i = 0; i <platformX.length; i++) {
+      platform(platformX[i], platformY[i], 70, 30)
+      }
+
+      for(var i = 0; i <PuntenX.length; i++) {
+      Punten(PuntenX[i], PuntenY[i], 10, 10, i)
+      }
+
+      for(var i = 0; i <schadePlatformY.length; i++) {
+      beweegPlatform(i,i)
+    }
+      
+    schadePlatform(10, 400 - 5, width - 2*10, height - 2*10 - 375 + 5)
+}
+
+      textSize(30)
+      fill(200, 200, 200)
+      text("levens = " + levens, 40, 40, 200, 200)
+      text("score = " + score, 40, 80, 400, 200)
+      spelerY += 3.25
+
+
+
+
+
+
+       
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }
@@ -426,6 +456,8 @@ switch(level) {
      
      
       break;
+
+
     case GAMEOVER:
         background(0,0,0);
         textSize(75)
