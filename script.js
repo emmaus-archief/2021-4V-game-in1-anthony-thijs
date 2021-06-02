@@ -21,6 +21,7 @@ const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
+var spelStatus = UITLEG;
 const LEVELEEN = 0;
 const LEVELTWEE = 1;
 const LEVELDRIE = 2;
@@ -339,8 +340,25 @@ function setup() {
 function draw() {
   switch (spelStatus) {
     case UITLEG:
- if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
+
+    if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
+    fill(175, 175, 175)
+    textSize(30)
+    text("Gebruik de linker en rechter pijltjes om heen en weer te bewegen. Met pijltje omhoog kan je springen. De langer je het pijltje ingedrukt houd de hoger je karakter springt.", 40, 20, 1240, 700)
+    text("Druk op enter om de game te starten.", 40, 150, 1240, 700)
+
+    text("Blauwe platforms zijn veilig bruine platforms brengen schade op", 325, 265, 700, 700)
+
+    text(" bruine platforms brengen schade op", 325, 375, 900, 700 )
+
+    text("Dit is een punt. als je deze oppakt dan gaat je score plus 1.", 325, 550, 1000, 700)
+
+    platform(150, 250, 100, 50)
+    schadePlatform(150, 375, 100, 50)
+    Punten(200, 550, 20, 20)
    
+    if (keyIsPressed && keyCode === 13) {
+        spelStatus = SPELEN;}
     break;
     
     
@@ -442,7 +460,7 @@ switch(level) {
         spawnY = 500;
 
     if (keyIsPressed && keyCode === 13) {
-        spelStatus = SPELEN;
+        spelStatus = UITLEG;
          levens = 5;
         score = 0;
          PuntenX = [300, 600, 800, 400, 700];

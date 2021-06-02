@@ -231,3 +231,123 @@ if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
 
     text("Blauwe platforms zijn veilig en bruine platforms brengen schade op als je op grond komt ben je af",  325, 550, 1000, 700);
   
+
+
+
+
+
+  function draw() {
+  switch (spelStatus) {
+    case UITLEG:
+ if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
+   
+    break;
+    
+    
+    case SPELEN:
+      beweegVijand();
+      beweegKogel();
+      beweegSpeler();
+      if (checkVijandGeraakt()) {
+        // punten erbij
+        // nieuwe vijand maken
+      }
+      
+      if (checkSpelerGeraakt()) {
+        // leven eraf of gezondheid verlagen
+        // eventueel: nieuwe speler maken
+        levens -= 1;
+        spawnX = 25;
+
+      }
+
+      tekenVeld();
+      tekenBorders();
+      tekenPlatform();
+      tekenVijand(vijandX, vijandY);
+      tekenKogel(kogelX, kogelY);
+      tekenSpeler(spelerX, spelerY);
+
+switch(level) {
+
+      case LEVELEEN:
+ if (keyIsPressed && keyCode === 13) {
+        spelStatus = SPELEN;
+         levens = 5;
+        score = 0;
+         PuntenX = [300, 600, 800, 400, 700];
+         PuntenY = [450, 450, 450, 650, 200];
+       }
+
+      for(var i = 0; i <schadePlatformX.length; i++) {
+      schadePlatform(schadePlatformX[i], schadePlatformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <platformX.length; i++) {
+      platform(platformX[i], platformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <PuntenX.length; i++) {
+      Punten(PuntenX[i], PuntenY[i], 20, 20, i)
+      }
+
+      for(var i = 0; i <schadePlatformY.length; i++) {
+      beweegPlatform(i,i)
+    }
+      
+    schadePlatform(20, 600 - 5, width - 2*20, height - 2*20 - 575 + 5)
+}
+
+      textSize(30)
+      fill(200, 200, 200)
+      text("levens = " + levens, 40, 40, 200, 200)
+      text("score = " + score, 40, 80, 400, 200)
+      spelerY += 3.25
+
+      
+
+
+
+
+
+       
+      if (checkGameOver()) {
+        spelStatus = GAMEOVER;
+      }
+      break;
+      
+     
+     
+     
+     
+      break;
+
+
+    case GAMEOVER:
+        background(0,0,0);
+        textSize(75)
+        fill(255, 0, 0)
+        text("game over", 640 - 175, 360, 700, 700);
+        text("score: " + score, 640 - 175, 460, 700, 700);
+
+        if (score > highScore) {
+            highScore = score;
+        }
+
+        text ("Highscore: " + highScore, 640 - 175, 560, 700, 700);
+        level = LEVELEEN;
+        spelerX = 159;
+        spelerY = 500;
+        spawnX = 159;
+        spawnY = 500;
+
+    if (keyIsPressed && keyCode === 13) {
+        spelStatus = SPELEN;
+         levens = 5;
+        score = 0;
+         PuntenX = [300, 600, 800, 400, 700];
+         PuntenY = [450, 450, 450, 650, 200];
+       }
+  }
+}
+
