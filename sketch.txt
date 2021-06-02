@@ -182,3 +182,52 @@ function preload() {
 };
 
 image('platform.png', platform[0], y, w, h);
+
+
+switch(level) {
+
+      case LEVELTWEE:
+ if (keyIsPressed && keyCode === 50) {
+        spelStatus = SPELEN;
+         levens = 5;
+         score = 0;
+         PuntenX = [300, 600, 800, 400, 700];
+         PuntenY = [450, 450, 450, 650, 200];
+       }
+       for(var i = 0; i <schadePlatformX.length; i++) {
+      schadePlatform(schadePlatformX[i], schadePlatformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <platformX.length; i++) {
+      platform(platformX[i], platformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <PuntenX.length; i++) {
+      Punten(PuntenX[i], PuntenY[i], 20, 20, i)
+      }
+
+      for(var i = 0; i <schadePlatformY.length; i++) {
+      beweegPlatform(i,i)
+    }
+      
+    schadePlatform(20, 600 - 5, width - 2*20, height - 2*20 - 575 + 5)
+}
+
+      textSize(30)
+      fill(200, 200, 200)
+      text("levens = " + levens, 40, 40, 200, 200)
+      text("score = " + score, 40, 80, 400, 200)
+      spelerY += 3.25
+
+if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
+
+ fill(175, 175, 175)
+    textSize(30)
+    text("The Floor is Lava",  40, 150, 1240, 700);
+   
+    text("Controls", 60, 170, 700, 700);
+   
+    text("Gebruik de pijltoetsen naar links, rechts, beneden en omhoog om te bewegen", 325, 375, 900, 700);
+
+    text("Blauwe platforms zijn veilig en bruine platforms brengen schade op als je op grond komt ben je af",  325, 550, 1000, 700);
+  

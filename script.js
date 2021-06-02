@@ -404,42 +404,7 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
 
-      switch(level) {
-
-      case LEVELTWEE:
- if (keyIsPressed && keyCode === 8) {
-        spelStatus = SPELEN;
-         levens = 5;
-        score = 0;
-         PuntenX = [300, 600, 800, 400, 700];
-         PuntenY = [450, 450, 450, 650, 200];
-       }
-
-      for(var i = 0; i <schadePlatformX.length; i++) {
-      schadePlatform(schadePlatformX[i], schadePlatformY[i], 70, 30)
-      }
-
-      for(var i = 0; i <platformX.length; i++) {
-      platform(platformX[i], platformY[i], 70, 30)
-      }
-
-      for(var i = 0; i <PuntenX.length; i++) {
-      Punten(PuntenX[i], PuntenY[i], 10, 10, i)
-      }
-
-      for(var i = 0; i <schadePlatformY.length; i++) {
-      beweegPlatform(i,i)
-    }
       
-    schadePlatform(10, 400 - 5, width - 2*10, height - 2*10 - 375 + 5)
-}
-
-      textSize(30)
-      fill(200, 200, 200)
-      text("levens = " + levens, 40, 40, 200, 200)
-      text("score = " + score, 40, 80, 400, 200)
-      spelerY += 3.25
-
 
 
 
