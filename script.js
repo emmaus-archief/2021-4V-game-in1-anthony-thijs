@@ -51,6 +51,7 @@ sy: 20
  var KEY_LEFT = 37;
  var KEY_RIGHT = 39;
  var KEY_SPACEBAR = 32;
+ var KEY_UPDOWN = 38;
  var KEY_DOWN = 40;
  var sprongHoogte = 5;
  var speedJump = 20;
@@ -225,7 +226,7 @@ var beweegKogel = function() {
     if (keyIsPressed) 
        if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
        else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
-       else if (keyIsDown(KEY_SPACEBAR)) {spelerY -= 5}
+       else if (keyIsDown(KEY_UPDOWN)) {spelerY -= 5}
        else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
        
        
@@ -338,25 +339,20 @@ function setup() {
 function draw() {
   switch (spelStatus) {
     case UITLEG:
-  
-  if (keyIsPressed && keyCode === 49) { 
-      spelStatus = UITLEG
-  
-    background(0,0,0);
-    textSize(65)
-    fill(255, 0, 0)
+ if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
+    fill(175, 175, 175)
+    textSize(30)
     text("The Floor is Lava", 640 - 175, 10, 700, 700);
-    textSize(60)
     text("Controls", 640 - 175, 110, 700, 700);
-    textSize(40)
     text("Gebruik de pijltoetsen naar links, rechts en beneden om te bewegen", 640 - 175, 210, 700, 700);
     text("Gebruik de spacebar om te zweven", 640 - 175, 310, 700, 700);
     text("Blauwe platforms zijn veilig en bruine platforms brengen schade op", 640 - 175, 410, 700, 700);
     text("Raak de vloer aan en je bent dood", 640 - 175, 510, 700, 700);
     
-  }
-    
-    
+
+    platform(150, 250, 100, 50)
+    schadePlatform(150, 375, 100, 50)
+    Punten(200, 550, 20, 20)
     break;
     
     
