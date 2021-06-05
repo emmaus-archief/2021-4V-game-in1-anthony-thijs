@@ -13,7 +13,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] beweeg speler (door pijltjes)
 - [x] kleine powerupjes/punten
 - [x] platforms maken  
-- [ ] uitlegscherm
+- [x] uitlegscherm
 - [x]  levens er af en bij 
 - [x] tegenplatformen 
 
