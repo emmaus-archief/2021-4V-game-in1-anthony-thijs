@@ -20,12 +20,15 @@
 const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
+const LEVELKLAAR = 3;
 var spelStatus = SPELEN;
 var spelStatus = UITLEG;
+var spelStatus = LEVELKLAAR;
 const LEVELEEN = 0;
 const LEVELTWEE = 1;
 const LEVELDRIE = 2;
 var level = LEVELEEN;
+var level = LEVELTWEE;
 
 var spawnX = 159;
 var spawnY = 500;
@@ -318,6 +321,7 @@ var checkGameOver = function() {
 };
 
 
+
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -421,10 +425,7 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
 
-      
-
-
-
+     
 
 
        
