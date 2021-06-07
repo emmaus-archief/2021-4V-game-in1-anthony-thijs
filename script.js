@@ -28,6 +28,7 @@ const LEVELEEN = 0;
 const LEVELTWEE = 1;
 const LEVELDRIE = 2;
 var level = LEVELEEN;
+var level = LEVELTWEE;
 
 
 var spawnX = 159;
@@ -332,7 +333,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('red');
+  background('blue');
 }
 
 
@@ -425,21 +426,52 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
 
+     break;
+      
      
+     case LEVELTWEE:
+ if (keyIsPressed && keyCode === 50) {
+        spelStatus = SPELEN;
+         levens = 5;
+         score = 0;
+         PuntenX = [300, 600, 800, 400, 700];
+         PuntenY = [450, 450, 450, 650, 200];
+       }
+
+      for(var i = 0; i <schadePlatformX.length; i++) {
+      schadePlatform(schadePlatformX[i], schadePlatformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <platformX.length; i++) {
+      platform(platformX[i], platformY[i], 100, 50)
+      }
+
+      for(var i = 0; i <PuntenX.length; i++) {
+      Punten(PuntenX[i], PuntenY[i], 20, 20, i)
+      }
+
+      for(var i = 0; i <schadePlatformY.length; i++) {
+      beweegPlatform(i,i)
+    }
+      
+    schadePlatform(20, 600 - 5, width - 2*20, height - 2*20 - 575 + 5)
+}
+
+      textSize(30)
+      fill(200, 200, 200)
+      text("levens = " + levens, 40, 40, 200, 200)
+      text("score = " + score, 40, 80, 400, 200)
+      spelerY += 3.25
+      
+
 
 
        
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }
-      break;
-      
-     
-     
-     
-     
-      break;
-
+    }
+ break;
 
     case GAMEOVER:
         background(0,0,0);
@@ -466,6 +498,7 @@ switch(level) {
          PuntenX = [300, 600, 800, 400, 700];
          PuntenY = [450, 450, 450, 650, 200];
        }
-  }
+    }
 }
+
 
