@@ -45,14 +45,6 @@ var vijandY = 600;   // y-positie van vijand
 var score = 0; // aantal behaalde punten
 
 
-
-var player ={
-x : 100,
-y: 300,
-sx: 20,
-sy: 20
-};
-
  var KEY_LEFT = 37;
  var KEY_RIGHT = 39;
  var KEY_SPACEBAR = 32;
@@ -70,17 +62,17 @@ sy: 20
  var platformBreedte = 225;
  var platformSize = [200, 150, 220, 450];
  
-var platformX = [50, 300, 550, 800, 1050];
+var platformX = [50, 260, 500, 760, 1000];
 var platformY = [500, 500, 500, 500, 500]
 
  var PuntenX = [300, 600, 800, 400, 700];
- var PuntenY = [450, 450, 450, 650, 200];
+ var PuntenY = [450, 450, 450, 650, 100];
  var punten = 0;
  var highScore = 0;
- var levens = 8;
+ var levens = 1;
 
-var schadePlatformX = [165, 325, 475, 625];
-var schadePlatformY = [250, 250, 250, 250];
+var schadePlatformX = [125, 305, 425, 625];
+var schadePlatformY = [280, 280, 280, 280];
 
 
 
@@ -93,14 +85,14 @@ var schadePlatformY = [250, 250, 250, 250];
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("white");
+  fill("black");
   rect(20, 20, width - 2 * 20, height - 2 * 20)
 };
 
 /*Tekent borders voor het speelveld*/
 
 var tekenBorders = function() {
-    fill("green")
+    fill("red")
     rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
     if (spelerY > 600 - spelerSize/2) {
         spelerY = 600 - spelerSize/2;
@@ -256,9 +248,9 @@ var beweegPlatform = function(x,y) {
 
 };
 var Punten = function(x, y, w, h, p)
-{if (spelerX > x - 0.375*w && 
+{if (spelerX > x - 0.365*w && 
         spelerX < x + 1*w && 
-        spelerY > y - 0.375*h && 
+        spelerY > y - 0.365*h && 
         spelerY < y + 1*w)
 
         {score += 1;
@@ -333,7 +325,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('black');
 }
 
 
@@ -396,18 +388,18 @@ switch(level) {
       case LEVELEEN:
  if (keyIsPressed && keyCode === 13) {
         spelStatus = SPELEN;
-         levens = 5;
+         levens = 1;
         score = 0;
-         PuntenX = [300, 600, 800, 400, 700];
-         PuntenY = [450, 450, 450, 650, 200];
+         PuntenX = [300, 600, 800, 400,  700];
+         PuntenY = [450, 450, 450, 650,  100];
        }
 
       for(var i = 0; i <schadePlatformX.length; i++) {
-      schadePlatform(schadePlatformX[i], schadePlatformY[i], 100, 50)
+      schadePlatform(schadePlatformX[i], schadePlatformY[i], 50, 25)
       }
 
       for(var i = 0; i <platformX.length; i++) {
-      platform(platformX[i], platformY[i], 100, 50)
+      platform(platformX[i], platformY[i], 100, 20)
       }
 
       for(var i = 0; i <PuntenX.length; i++) {
@@ -445,8 +437,8 @@ switch(level) {
     case GAMEOVER:
       
         background(0,0,0);
-        textSize(75)
-        fill(255, 0, 0)
+        textSize(80)
+        fill('blue')
         text("game over", 640 - 175, 360, 700, 700);
         text("score: " + score, 640 - 175, 460, 700, 700);
 
