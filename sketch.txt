@@ -398,5 +398,5 @@ if (spelerX > 1200 && spelerY > 1200){
     }
 
 function preload () {
-    imgPlatform = loadImage('platform.png')
+    imgPlatform = loadImage('platform.png');
 }
