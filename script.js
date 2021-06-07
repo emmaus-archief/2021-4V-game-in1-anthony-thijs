@@ -346,7 +346,8 @@ function draw() {
   switch (spelStatus) {
     case UITLEG:
 
-    if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
+    if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;
+    }
     fill(175, 175, 175)
     textSize(30)
     text("Gebruik de linker en rechter pijltjes om heen en weer te bewegen. Met pijltje omhoog kan je springen. De langer je het pijltje ingedrukt houd de hoger je karakter springt.", 40, 20, 1240, 700)
@@ -429,51 +430,18 @@ switch(level) {
      break;
       
      
-     case LEVELTWEE:
- if (keyIsPressed && keyCode === 50) {
-        spelStatus = SPELEN;
-         levens = 5;
-         score = 0;
-         PuntenX = [300, 600, 800, 400, 700];
-         PuntenY = [450, 450, 450, 650, 200];
-       }
-
-      for(var i = 0; i <schadePlatformX.length; i++) {
-      schadePlatform(schadePlatformX[i], schadePlatformY[i], 100, 50)
-      }
-
-      for(var i = 0; i <platformX.length; i++) {
-      platform(platformX[i], platformY[i], 100, 50)
-      }
-
-      for(var i = 0; i <PuntenX.length; i++) {
-      Punten(PuntenX[i], PuntenY[i], 20, 20, i)
-      }
-
-      for(var i = 0; i <schadePlatformY.length; i++) {
-      beweegPlatform(i,i)
-    }
-      
-    schadePlatform(20, 600 - 5, width - 2*20, height - 2*20 - 575 + 5)
-}
-
-      textSize(30)
-      fill(200, 200, 200)
-      text("levens = " + levens, 40, 40, 200, 200)
-      text("score = " + score, 40, 80, 400, 200)
-      spelerY += 3.25
-      
 
 
 
        
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
+      
       }
-    }
- break;
+      break;
 
     case GAMEOVER:
+      
         background(0,0,0);
         textSize(75)
         fill(255, 0, 0)
