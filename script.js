@@ -28,7 +28,7 @@ const LEVELEEN = 0;
 const LEVELTWEE = 1;
 const LEVELDRIE = 2;
 var level = LEVELEEN;
-var level = LEVELTWEE;
+
 
 
 var spawnX = 159;
@@ -427,7 +427,7 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
 
-     break;
+    
       
      
 
@@ -438,6 +438,8 @@ switch(level) {
         spelStatus = GAMEOVER;
       
       }
+      break;
+
       break;
 
     case GAMEOVER:
