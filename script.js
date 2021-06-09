@@ -426,7 +426,6 @@ switch(level) {
     
 case LEVELTWEE:
  if (keyIsPressed && keyCode === 50) {
-        spelStatus = SPELEN;
          levens = 1;
         score = 0;
          PuntenX = [300, 600, 800, 400,  700];
@@ -459,10 +458,8 @@ for(var i = 0; i <schadePlatformX.length; i++) {
        
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
-      
       }
-      break;
-
+    }
       break;
 
     case GAMEOVER:
@@ -491,6 +488,5 @@ for(var i = 0; i <schadePlatformX.length; i++) {
          PuntenX = [300, 600, 800, 400, 700];
          PuntenY = [450, 450, 450, 650, 200];
        }
-}
 }
 
