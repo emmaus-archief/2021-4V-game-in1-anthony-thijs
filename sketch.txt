@@ -396,3 +396,7 @@ switch(level = LEVELTWEE) {
 if (spelerX > 1200 && spelerY > 1200){
        level =LEVELTWEE
     }
+
+function preload () {
+    imgPlatform = loadImage('platform.png')
+}
