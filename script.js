@@ -340,8 +340,10 @@ function draw() {
   switch (spelStatus) {
     case UITLEG:
 
-    if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;
+    if (keyIsDown(KEY_SPACEBAR)) {
+        spelStatus = UITLEG;
     }
+
     fill(175, 175, 175)
     textSize(30)
     text("Gebruik de linker en rechter pijltjes om heen en weer te bewegen. Met pijltje omhoog kan je springen. De langer je het pijltje ingedrukt houd de hoger je karakter springt.", 40, 20, 1240, 700)
@@ -358,7 +360,8 @@ function draw() {
    
     if (keyIsPressed && keyCode === 13) {
         spelStatus = SPELEN;}
-    break;
+   
+        break;
     
     
     case SPELEN:
@@ -384,6 +387,7 @@ function draw() {
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
+      break;
 
 switch(level) {
 
@@ -456,13 +460,13 @@ for(var i = 0; i <schadePlatformX.length; i++) {
       spelerY += 3.25
       
        
+     
+     
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }
-    }
       break;
-
-    case GAMEOVER:
+      case GAMEOVER:
       
         background(0,0,0);
         textSize(80)
@@ -476,17 +480,20 @@ for(var i = 0; i <schadePlatformX.length; i++) {
 
         text ("Highscore: " + highScore, 640 - 175, 560, 700, 700);
         level = LEVELEEN;
+        level = LEVELTWEE
         spelerX = 159;
         spelerY = 500;
         spawnX = 159;
         spawnY = 500;
-
-    if (keyIsPressed && keyCode === 13) {
+          
+    if (keyIsPressed && keyCode === 32)  {
         spelStatus = UITLEG;
-         levens = 5;
+        levens = 5;
         score = 0;
-         PuntenX = [300, 600, 800, 400, 700];
-         PuntenY = [450, 450, 450, 650, 200];
+        PuntenX = [300, 600, 800, 400, 700];
+        PuntenY = [450, 450, 450, 650, 200];
        }
+    break;
 }
-
+}
+}
