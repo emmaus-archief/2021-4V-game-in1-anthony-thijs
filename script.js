@@ -29,6 +29,7 @@ const LEVELEEN = 0;
 const LEVELTWEE = 1;
 const LEVELDRIE = 2;
 var level = LEVELEEN;
+var level = LEVELTWEE
 
 
 
@@ -223,10 +224,10 @@ var beweegKogel = function() {
  */
  var beweegSpeler = function() {
     if (keyIsPressed) 
-       if (keyIsDown(KEY_LEFT)) {spelerX -= 3}
-       else if (keyIsDown(KEY_RIGHT)) {spelerX += 3}
-       else if (keyIsDown(KEY_UPDOWN)) {spelerY -= 5}
-       else if (keyIsDown(KEY_DOWN)) {spelerY +=5}
+       if (keyIsDown(KEY_LEFT)) {spelerX -= 6}
+       else if (keyIsDown(KEY_RIGHT)) {spelerX += 6}
+       else if (keyIsDown(KEY_UPDOWN)) {spelerY -= 7}
+       else if (keyIsDown(KEY_DOWN)) {spelerY +=7}
        
        
    };
@@ -358,8 +359,14 @@ function draw() {
     schadePlatform(170, 375, 100, 50)
     Punten(170, 540, 20, 20)
    
-    if (keyIsPressed && keyCode === 13) {
-        spelStatus = SPELEN;}
+    if (keyIsPressed && keyCode === 49) {
+        spelStatus = SPELEN;
+        level = LEVELEEN;
+    }
+   if (keyIsPressed && keyCode === 50) {
+     spelStatus = SPELEN;
+     level = LEVELTWEE;
+   }
    
         break;
     
@@ -392,9 +399,9 @@ function draw() {
 switch(level) {
 
       case LEVELEEN:
- if (keyIsPressed && keyCode === 13) {
+ if (keyIsPressed && keyCode === 49) {
         spelStatus = SPELEN;
-         levens = 1;
+        levens = 1;
         score = 0;
          PuntenX = [300, 600, 800, 400,  700];
          PuntenY = [450, 450, 450, 650,  100];
@@ -424,10 +431,12 @@ switch(level) {
       text("levens = " + levens, 40, 40, 200, 200)
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
-      break;
 
-     
-      if (checkGameOver()) {
+  
+
+
+      
+   if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }
       break;
