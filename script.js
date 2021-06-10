@@ -23,7 +23,7 @@ const GAMEOVER = 2;
 
 var spelStatus = SPELEN;
 var spelStatus = UITLEG;
-var spelStatus = GAMEOVER;
+
 
 const LEVELEEN = 0;
 const LEVELTWEE = 1;
@@ -387,7 +387,7 @@ function draw() {
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
-      break;
+
 
 switch(level) {
 
@@ -424,18 +424,14 @@ switch(level) {
       text("levens = " + levens, 40, 40, 200, 200)
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
-      
-    
+      break;
 
-  
-       
-     
      
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }
       break;
-
+    
 
       case GAMEOVER:
       
