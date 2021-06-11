@@ -32,8 +32,6 @@ var level = LEVELEEN;
 var level = LEVELTWEE;
 
 
-
-
 var spawnX = 159;
 var spawnY = 500;
 var spelerX = 159; // x-positie van speler
@@ -60,16 +58,24 @@ var score = 0; // aantal behaalde punten
 
  var platformSnelheidY = [2, 2, 2, 2];
  var platformSnelheidX = [2, 2, 2, 2];
+ 
+ var platformSnelheidX2 = [4, 4, 4, 4];
+ var platformSnelheidY2 = [4, 4, 4, 4];
 
  var platformHeight = 60;
  var platformBreedte = 225;
  var platformSize = [200, 150, 220, 450];
  
 var platformX = [50, 260, 500, 760, 1000];
-var platformY = [500, 500, 500, 500, 500]
+var platformY = [500, 500, 500, 500, 500];
+var platformY2 = [500, 400, 300, 400, 500];
 
- var PuntenX = [300, 600, 800, 400, 700];
- var PuntenY = [450, 450, 450, 650, 100];
+var schadePlatformX2 = [120, 325, 630, 800];
+var schadePlatformY2 = [325, 450, 350, 375];
+
+
+ var PuntenX = [300, 600, 700, 400, 700];
+ var PuntenY = [450, 450, 450, 450, 450];
  var punten = 0;
  var highScore = 0;
  var levens = 1;
@@ -77,6 +83,8 @@ var platformY = [500, 500, 500, 500, 500]
 var schadePlatformX = [125, 305, 425, 625];
 var schadePlatformY = [280, 280, 280, 280];
 
+var schadePlatformX3 = [200, 475, 725, 975];
+var schadePlatformY3 = [300, 350, 270, 350];
 
 
 /* ********************************************* */
@@ -168,6 +176,9 @@ var tekenPlatform = function(x,y,w,h) {
 var schadePlatformX = [200, 475, 725, 975];
 var schadePlatformY = [300, 350, 270, 350];
 
+var schadePlatformX2 = [250, 425, 650, 900];
+var schadePlatformY2 = [275, 325, 250, 325];
+
 
 /**
  * Tekent de vijand
@@ -232,10 +243,23 @@ var beweegPlatform = function(x,y) {
     if (schadePlatformY[y] < 350) {
         platformSnelheidY[y] = 2;
     }
+};
 
+    var beweegPlatform2 = function(x,y){
+    schadePlatformY2[y] += platformSnelheidY2[y];
+    schadePlatformX2[x] += platformSnelheidY2[x];
+
+    if (schadePlatformY2[y] > 550) {
+        platformSnelheidY2[y] = -2;
+    }
+    
+    if (schadePlatformY2[y] < 275) {
+        platformSnelheidY2[y] = 2;
+    }
+   
+};
     
 
-};
 var Punten = function(x, y, w, h, p)
 {if (spelerX > x - 0.365*w && 
         spelerX < x + 1*w && 
@@ -408,7 +432,8 @@ switch(level) {
     }
       
     schadePlatform(20, 600 - 5, width - 2*20, height - 2*20 - 575 + 5)
-}
+    
+}            
 
       textSize(30)
       fill(200, 200, 200)
@@ -433,19 +458,19 @@ switch(level) {
        }
 
       for(var i = 0; i <schadePlatformX.length; i++) {
-      schadePlatform(schadePlatformX[i], schadePlatformY[i], 125, 50)
+      schadePlatform(schadePlatformX2[i], schadePlatformY2[i], 105, 50)
       }
 
       for(var i = 0; i <platformX.length; i++) {
-      platform(platformX[i], platformY[i], 100, 70)
+      platform(platformX[i], platformY2[i], 125, 70)
       }
 
       for(var i = 0; i <PuntenX.length; i++) {
-      Punten(PuntenX[i], PuntenY[i], 10, 10, i)
+      Punten(PuntenX[i], PuntenY[i], 15, 15, i)
       }
 
       for(var i = 0; i <schadePlatformY.length; i++) {
-      beweegPlatform(i,i)
+      beweegPlatform2(i,i)
     }
       
     schadePlatform(20, 600 - 5, width - 2*10, height - 2*20 - 575 + 15)
@@ -512,3 +537,4 @@ switch(level) {
   
 }
 }
+
