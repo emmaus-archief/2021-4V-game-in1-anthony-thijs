@@ -11,8 +11,6 @@
  */
 
 
-
-
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
@@ -102,6 +100,16 @@ var schadePlatformY2 = [315, 350, 350, 375];
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
 
+// variabelen voor plaatjes
+var imgA = 0;
+var imgB = 0;
+var imgC = 0;
+
+function preload() {
+  imgA = loadImage('background.gif'); // plaatje laden
+  imgB = loadImage('platform.png');
+  imgC = loadImage('spaceship.png');
+    };
 
 /**
  * Tekent het speelveld
@@ -183,6 +191,7 @@ var tekenPlatform = function(x,y,w,h) {
     fill("blue");
     rect(platformX[0], y, w, h);
 };
+
 var schadePlatformX = [200, 475, 725, 975];
 var schadePlatformY = [300, 350, 270, 350];
 
@@ -197,21 +206,12 @@ var schadePlatformY2 = [275, 325, 250, 325];
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenVijand = function(x, y) {
-    
-};
-
 
 /**
  * Tekent de kogel of de bal
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenKogel = function(x, y) {
-
-
-};
-
 
 /**
  * Tekent de speler
@@ -239,6 +239,7 @@ var tekenSpeler = function(x, y) {
        else if (keyIsDown(KEY_DOWN)) {spelerY += 13}
        
    };
+
 var beweegPlatform = function(x,y) {
     // platformX[x] += platformSpeed;
     // damagePlatformY[y] += platformSpeedY[y];
@@ -356,9 +357,10 @@ function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
 
-  // Kleur de achtergrond blauw, zodat je het kunt zien
+  // Kleur de achtergrond zwart
   background('black');
 }
+
 
 
 /**
@@ -367,6 +369,9 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
+
+
+
   switch (spelStatus) {
     case UITLEG:
 
@@ -421,16 +426,15 @@ function draw() {
       }
 
       tekenVeld();
+      tekenSpeler(spelerX, spelerY);
       tekenBorders();
       tekenPlatform();
-      tekenVijand(vijandX, vijandY);
-      tekenKogel(kogelX, kogelY);
-      tekenSpeler(spelerX, spelerY);
 
 
 switch(level) {
 
       case LEVELEEN:
+          image(imgA, 0, 0, 1300, 750); 
  if (keyIsPressed && keyCode === 49) {
         spelStatus = SPELEN;
         levens = 1;
@@ -474,8 +478,8 @@ switch(level) {
   
 
   switch(level) {
-
       case LEVELTWEE:
+          image(imgA, 0, 0, 1300, 750); 
  if (keyIsPressed && keyCode === 50) {
         spelStatus = SPELEN;
         levens = 1;
@@ -521,6 +525,7 @@ switch(level) {
 switch(level) {
 
       case LEVELDRIE:
+          image(imgA, 0, 0, 1300, 750);
  if (keyIsPressed && keyCode === 51) {
         spelStatus = SPELEN;
         levens = 1;
