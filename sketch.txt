@@ -1,7 +1,7 @@
 Hier kan de code erin gezet worden voor later. Soort van schets plek voor je code om daarna te copy/pasten
 
 var tekenBorders = function() {
-    fill("green")
+    fill("")
     rect(20, 600, width - 2 * 20, height - 2 * 20 - 575);
     if (spelerY > 600 - spelerSize/2) {
         spelerY = 600 - spelerSize/2;
@@ -62,26 +62,6 @@ var zwaartekracht = function() {
 };
 
 
-if (yPlatform > 600 - spelerSize/2) {
-        yPlatform= 600 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    if (xPlatform > 1200 - spelerSize/2) {
-        xPlatform = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    if (xPlatform < 100 - spelerSize/2) {
-        xPlatform = 100 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
-    if (yPlatform > 1200 - spelerSize/2) {
-        yPlatform = 1200 - spelerSize/2;
-        jumpHoogte = 8.5 + 2.5;
-        speedJump = 0;
-    }
     
 
     var platform = function(x, y, w, h) {
@@ -99,79 +79,8 @@ if (yPlatform > 600 - spelerSize/2) {
          )
     }
 
-var Hsprong = 6.5 + 5.5;
-var Ssprong = 0;
 
-var sprongSpeler = function() {
-    spelerY -= Hsprong;
-    Ssprong += 1
-}
- if (Ssprong === 5) { Hsprong = 3 + 5.5;
-}
-if (Ssprong === 10) { Hsprong = 2 + 5.5;
-}
-if (Ssprong === 20) { Hsprong = 1 + 5.5;
-}
-if (Ssprong === 30) { Hsprong = 0;
-}
-
-  /*if (spelerX > 1260 - spelerSize/2) {
-          level = TWEEDELEVEL;
-          spawnX = 100;
-          spawnY = 500;
-          spelerX = 20 + spelerSize/2;
-      }
-      if (spelerX < 20 + spelerSize/2) {
-          level = DERDELEVEL;
-          spawnX = 1280 - 100;
-          spawnY = 500;
-          spelerX = 1260 - spelerSize/2;
-      }
-      break;
     
-      case TWEEDELEVEL:
-      damagePlatform(300, 500, 300, 70)
-      break;
-      case DERDELEVEL:
-      platform(550, 300, platformSize[1], platformSize[0])
-      platform(1000, 40, platformSize[1], platformSize[0])
-      platform(300, 500, platformSize[1], platformSize[0])
-      damagePlatform(700, 500, 300, 70)
-    }*/
-
-    var zon = function(x,y) {
-    ellipse(achtergrondX[x], achtergrondY[y], 15, 15)
-
-    if (achtergrondY[y] > 750) {
-        achtergrondY[y] = random(20, 250)
-        achtergrondX[x] = random(20, 1280)
-    }
-
-    achtergrondX[x] += 1.5
-    achtergrondY[y] += 3.5
- };
-
-UITLEG**
-background(0,0,0);
-    textSize(65)
-    fill(255, 0, 0)
-    text("The Floor is Lava", 640 - 175, 10, 700, 700);
-    textSize(60)
-    text("Controls", 640 - 175, 110, 700, 700);
-    textSize(40)
-    text("Gebruik de pijltoetsen naar links, rechts en beneden om te bewegen", 640 - 175, 210, 700, 700);
-    text("Gebruik de spacebar om te zweven", 640 - 175, 310, 700, 700);
-    text("Blauwe platforms zijn veilig en bruine platforms brengen schade op", 640 - 175, 410, 700, 700);
-    text("Raak de vloer aan en je bent dood", 640 - 175, 510, 700, 700);
-
-    if (keyIsPressed && keyCode === 13) {
-    spelStatus = SPELEN;
-    levens = 5;
-    score = 0;
-    PuntenX = [300, 600, 800, 400, 700];
-    PuntenY = [450, 450, 450, 650, 200];
-       }
-
 
 /*Plaatjes*/
 
@@ -218,22 +127,6 @@ switch(level) {
       text("levens = " + levens, 40, 40, 200, 200)
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
-
-if (keyIsDown(KEY_SPACEBAR)) {spelStatus = UITLEG;}
-
- fill(175, 175, 175)
-    textSize(30)
-    text("The Floor is Lava",  40, 150, 1240, 700);
-   
-    text("Controls", 60, 170, 700, 700);
-   
-    text("Gebruik de pijltoetsen naar links, rechts, beneden en omhoog om te bewegen", 325, 375, 900, 700);
-
-    text("Blauwe platforms zijn veilig en bruine platforms brengen schade op als je op grond komt ben je af",  325, 550, 1000, 700);
-  
-
-
-
 
 
   function draw() {
@@ -488,3 +381,54 @@ if (schadePlatformY3[y] > 540) {
         platformSnelheidY2[y] += 2;
     }
 };
+
+            PuntenX2.splice(p, 1);
+            PuntenY2.splice(p, 1);
+            PuntenX3.splice(p, 1);
+            PuntenY3.splice(p, 1);
+
+
+             if (checkGameOver()) {
+          spelStatus = KlAAR
+      } 
+      break;
+
+      case KlAAR:
+       
+      background(0,0,0);
+        textSize(80)
+        fill('blue')
+        text("gefeliciteerd u heeft alle punten verzalemd u kunt nu door naar het volgende level", 40, 20, 1240, 700);
+        text("druk op 1 om naar level 1 tegaan en vandaar kunt u door naar level 2 en  " , 40, 150, 1240, 700);
+
+if (keyIsPressed && keyCode === 49)  {
+        spelStatus = SPELEN;
+        level = LEVELEEN;
+         levens = 1;
+        score = 0;
+        PuntenX = [300, 550, 800, 1000];
+        PuntenY = [450, 450, 450, 450];
+       }
+       
+ else if (keyIsPressed && keyCode === 50)  {
+        spelStatus = SPELEN;
+        level = LEVELTWEE;
+       levens = 1;
+        score = 0;
+        PuntenX2 = [271, 531, 771, 1021];
+        PuntenY2 = [390, 300, 300, 450];
+        
+       }
+      
+       else if (keyIsPressed && keyCode === 51)  {
+        spelStatus = SPELEN;
+        level = LEVELDRIE;
+         levens = 1;
+        score = 0;
+        PuntenX3 = [300, 300, 550, 1000];
+        PuntenY3 = [450, 250, 350, 300];
+       }
+       
+       if (keyIsPressed && keyCode === KEY_SPACEBAR)  {
+        spelStatus = UITLEG;
+         }
