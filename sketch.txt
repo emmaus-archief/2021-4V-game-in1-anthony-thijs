@@ -59,11 +59,7 @@ var zwaartekracht = function() {
         while(spelerY > 100 )
         spelerY -= 10;
     }
-};
-
-
-    
-
+}
     var platform = function(x, y, w, h) {
          if (spelerX > x - spelerSize/ 2 &&
          spelerX < x + w spelerSize/2 &&
@@ -78,9 +74,6 @@ var zwaartekracht = function() {
          spelerY < y + spelerSize/2
          )
     }
-
-
-    
 
 /*Plaatjes*/
 
@@ -197,13 +190,7 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
 
-      
-
-
-
-
-
-       
+    
       if (checkGameOver()) {
         spelStatus = GAMEOVER;
       }

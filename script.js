@@ -23,7 +23,7 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN;
 var spelStatus = UITLEG;
 
-
+/* variablen en constanten voor level switchen*/
 const LEVELEEN = 0;
 const LEVELTWEE = 1;
 const LEVELDRIE = 2;
@@ -31,19 +31,16 @@ var level = LEVELEEN;
 var level = LEVELTWEE;
 var level = LEVELDRIE;
 
+
+/* variabelen voor beweeg speler en spawn punt*/
 var spawnX = 159;
 var spawnY = 500;
 var spelerX = 159; // x-positie van speler
 var spelerY = 390; // y-positie van speler
 
-var kogelX = 0;    // x-positie van kogel
-var kogelY = 0;    // y-positie van kogel
-
-var vijandX = 300;   // x-positie van vijand
-var vijandY = 600;   // y-positie van vijand
-
 var score = 0; // aantal behaalde punten
 
+/* variabelen voor toetsen gebruik*/
  var KEY_LEFT = 37;
  var KEY_RIGHT = 39;
  var KEY_SPACEBAR = 32;
@@ -53,7 +50,8 @@ var score = 0; // aantal behaalde punten
  var speedJump = 20;
  var spelerSize = 25;
  var jumpHoogte = 6.5;
-
+ 
+ /*variabelen voor Platformen en snelheid*/
  var platformSnelheidY = [2, 2, 2, 2];
  var platformSnelheidX = [2, 2, 2, 2];
  
@@ -76,10 +74,10 @@ var platformY3 = [500, 360, 525, 360, 280];
 var schadePlatformX = [125, 305, 425, 625];
 var schadePlatformY = [280, 280, 280, 280];
 
-var schadePlatformX2 = [70, 315, 618, 822];
+var schadePlatformX2 = [60, 315, 618, 822];
 var schadePlatformY2 = [315, 350, 350, 375];
 
-
+/* variabelen voor punten*/
  var PuntenX = [300, 550, 800, 1000];
  var PuntenY = [450, 450, 450, 450];
  
@@ -93,13 +91,6 @@ var schadePlatformY2 = [315, 350, 350, 375];
  var highScore = 0;
  var levens = 1;
 
-
-
-
-/* ********************************************* */
-/*      functies die je gebruikt in je game      */
-/* ********************************************* */
-
 // variabelen voor plaatjes
 var imgA = 0;
 var imgB = 0;
@@ -111,6 +102,13 @@ function preload() {
   imgC = loadImage('spaceship.png');
     };
 
+
+/* ********************************************* */
+/*      functies die je gebruikt in je game      */
+/* ********************************************* */
+
+
+
 /**
  * Tekent het speelveld
  */
@@ -119,7 +117,7 @@ var tekenVeld = function () {
   rect(20, 20, width - 2 * 20, height - 2 * 20)
 };
 
-/*Tekent borders voor het speelveld*/
+/*Tekent de borders voor het speelveld*/
 
 var tekenBorders = function() {
     fill("red")
@@ -141,6 +139,8 @@ var tekenBorders = function() {
      
     }
 };
+
+/* tekent de platformen */
 var platform = function(x, y, w, h) {
 if (spelerX > x - spelerSize/2 &&
     spelerX < x + w + spelerSize/2 &&
@@ -180,9 +180,8 @@ if (spelerX > x - 5 - spelerSize/2 &&
      
      {spelerX = x - 5 - spelerSize/2;
      };
-    
-    fill("blue")
-    rect(x, y, w, h)
+    fill('blue');
+    rect(x, y, w, h);
 };
 
 /*Tekent veiligheids platformen*/
@@ -239,11 +238,9 @@ var tekenSpeler = function(x, y) {
        else if (keyIsDown(KEY_DOWN)) {spelerY += 13}
        
    };
-
+/* laat de schadeplatformen bewegen*/
 var beweegPlatform = function(x,y) {
-    // platformX[x] += platformSpeed;
-    // damagePlatformY[y] += platformSpeedY[y];
-    // damagePlatformX[x] += platformSpeedX[x];
+    
 
     schadePlatformY[y] += platformSnelheidY[y];
     schadePlatformX[x] += platformSnelheidY[x];
@@ -259,6 +256,7 @@ var beweegPlatform = function(x,y) {
 
     var beweegPlatform2 = function(y){
     schadePlatformY2[y] += platformSnelheidY2[y];
+     
     
 
     if (schadePlatformY2[y] > 550) {
@@ -268,9 +266,11 @@ var beweegPlatform = function(x,y) {
     if (schadePlatformY2[y] < 200) {
         platformSnelheidY2[y] += 2;
     }
+     
+    
    
 };
-    
+    /*tekent de punten*/
 var Punten = function(x, y, w, h, p)
 {if (spelerX > x - 0.365*w && 
         spelerX < x + 1*w && 
@@ -291,7 +291,7 @@ var Punten = function(x, y, w, h, p)
       ellipse(x, y, w, h);
 };
 
-
+/*tekent schadePlatform*/
 var schadePlatform = function(x, y, w, h){
     if (spelerX > x- spelerSize/2 && 
         spelerX < x + w + spelerSize/2 &&
@@ -341,11 +341,7 @@ var checkGameOver = function() {
   else return false;
 };
 
-var checkGamegehaald = function(){
-     if (score === 4)
-     {return true}
-     else return false;
- };
+
 
 
 /**
@@ -370,8 +366,6 @@ function setup() {
  */
 function draw() {
 
-
-
   switch (spelStatus) {
     case UITLEG:
 
@@ -382,7 +376,7 @@ function draw() {
     fill(175, 175, 175)
     textSize(30)
     text("Gebruik de linker en rechter pijltjes om heen en weer te bewegen. Met pijltje omhoog kan je springen. De langer je het pijltje ingedrukt houd de hoger je karakter springt.", 40, 20, 1240, 700)
-    text("Druk op de 1 2 3 toesten om een level/game te starten. Om te wisselen van level ga af druk op 1 ga af en druk op het level wat u wilt spelen", 40, 150, 1240, 700)
+    text("Druk op de 1 2 3 toesten om een level/game te starten. Om te wisselen van level druk op 1 en druk op het level wat u wilt spelen", 40, 150, 1240, 700)
 
     text("Blauwe platforms zijn veilig bruine platforms brengen schade op", 325, 265, 700, 700)
 
@@ -396,15 +390,28 @@ function draw() {
     if (keyIsPressed && keyCode === 49) {
         spelStatus = SPELEN;
         level = LEVELEEN;
+        levens = 1;
+        score = 0;
+        PuntenX = [300, 550, 800, 1000];
+        PuntenY = [450, 450, 450, 450];
     }
    if (keyIsPressed && keyCode === 50) {
      spelStatus = SPELEN;
      level = LEVELTWEE;
+    levens = 1;
+        score = 0;
+        PuntenX2 = [271, 531, 771, 1021];
+        PuntenY2 = [390, 300, 300, 450];
    }
     
     if (keyIsPressed && keyCode === 51) {
      spelStatus = SPELEN;
      level = LEVELDRIE;
+      levens = 1;
+        score = 0;
+        PuntenX3 =  [300, 300, 550, 1000];
+        PuntenY3 = [450, 250, 350, 300];
+       
    }
 
         break;
@@ -426,7 +433,7 @@ function draw() {
       }
 
       tekenVeld();
-      tekenSpeler(spelerX, spelerY);
+     
       tekenBorders();
       tekenPlatform();
 
@@ -435,6 +442,7 @@ switch(level) {
 
       case LEVELEEN:
           image(imgA, 0, 0, 1300, 750); 
+          tekenSpeler(spelerX, spelerY);
  if (keyIsPressed && keyCode === 49) {
         spelStatus = SPELEN;
         levens = 1;
@@ -469,7 +477,24 @@ switch(level) {
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
     
-
+if (keyIsPressed && keyCode === 50) {
+     spelStatus = SPELEN;
+     level = LEVELTWEE;
+      levens = 1;
+        score = 0;
+        PuntenX2 = [271, 531, 771, 1021];
+        PuntenY2 = [390, 300, 300, 450];
+   }
+    
+    if (keyIsPressed && keyCode === 51) {
+     spelStatus = SPELEN;
+     level = LEVELDRIE;
+      levens = 1;
+        score = 0;
+        PuntenX3 =  [300, 300, 550, 1000];
+        PuntenY3 = [450, 250, 350, 300];
+       
+   }
     
     switch(spelStatus){
       case GAMEOVER:
@@ -480,6 +505,7 @@ switch(level) {
   switch(level) {
       case LEVELTWEE:
           image(imgA, 0, 0, 1300, 750); 
+          tekenSpeler(spelerX, spelerY);
  if (keyIsPressed && keyCode === 50) {
         spelStatus = SPELEN;
         levens = 1;
@@ -514,7 +540,31 @@ switch(level) {
       spelerY += 3.25
       
 
-      
+      if (keyIsPressed && keyCode === 49) {
+        spelStatus = SPELEN;
+        level = LEVELEEN;
+        levens = 1;
+        score = 0;
+        PuntenX = [300, 550, 800, 1000];
+        PuntenY = [450, 450, 450, 450];
+}  
+      if (keyIsPressed && keyCode === 50) {
+     spelStatus = SPELEN;
+     level = LEVELTWEE;
+      levens = 1;
+        score = 0;
+        PuntenX2 = [271, 531, 771, 1021];
+        PuntenY2 = [390, 300, 300, 450];
+   }
+    
+    if (keyIsPressed && keyCode === 51) {
+     spelStatus = SPELEN;
+     level = LEVELDRIE;
+      levens = 1;
+        score = 0;
+        PuntenX3 =  [300, 300, 550, 1000];
+        PuntenY3 = [450, 250, 350, 300];
+   }
 
 
       switch(spelStatus){
@@ -526,6 +576,7 @@ switch(level) {
 
       case LEVELDRIE:
           image(imgA, 0, 0, 1300, 750);
+           tekenSpeler(spelerX, spelerY);
  if (keyIsPressed && keyCode === 51) {
         spelStatus = SPELEN;
         levens = 1;
@@ -558,8 +609,35 @@ switch(level) {
       text("levens = " + levens, 40, 40, 200, 200)
       text("score = " + score, 40, 80, 400, 200)
       spelerY += 3.25
+        spelStatus = SPELEN;
+        
+        if (keyIsPressed && keyCode === 49) {
+        spelStatus = SPELEN;
+        level = LEVELEEN;
+        levens = 1;
+        score = 0;
+        PuntenX = [300, 550, 800, 1000];
+        PuntenY = [450, 450, 450, 450];
+}  
       
+    if (keyIsPressed && keyCode === 50) {
+     spelStatus = SPELEN;
+     level = LEVELTWEE;
+      levens = 1;
+        score = 0;
+        PuntenX2 = [271, 531, 771, 1021];
+        PuntenY2 = [390, 300, 300, 450];
+   }
     
+    if (keyIsPressed && keyCode === 51) {
+     spelStatus = SPELEN;
+     level = LEVELDRIE;
+      levens = 1;
+        score = 0;
+        PuntenX3 = [300, 300, 550, 1000];
+        PuntenY3 = [450, 250, 350, 300];
+       
+   }
 
 
       switch(spelStatus){
@@ -577,7 +655,6 @@ switch(level) {
       }
       break;
     
-
       case GAMEOVER:
       
         background(0,0,0);
@@ -615,7 +692,6 @@ switch(level) {
         score = 0;
         PuntenX2 = [271, 531, 771, 1021];
         PuntenY2 = [390, 300, 300, 450];
-        
        }
       
        else if (keyIsPressed && keyCode === 51)  {
