@@ -14,13 +14,14 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] kleine powerupjes/punten
 - [x] platforms maken  
 - [x] uitlegscherm
-- [x]  levens er af en bij 
+- [x] levens er af en bij 
 - [x] tegenplatformen 
+- [x] levelswitchen
 
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [x] platformtegenstander die schade doet
-- [x] achtergrond die miss beweegt 
+- [] plaatjes op platform of achtegrond
 - [ ] 
 
 

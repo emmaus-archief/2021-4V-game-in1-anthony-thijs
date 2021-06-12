@@ -476,3 +476,15 @@ for(var i = 0; i <schadePlatformX.length; i++) {
 }
 }
 }
+
+var beweegPlatform3 = function(y){
+   schadePlatformY3[y] += platformSnelheidY3[y];
+
+if (schadePlatformY3[y] > 540) {
+        platformSnelheidY2[y] += -2;
+    }
+    
+    if (schadePlatformY3[y] < 310) {
+        platformSnelheidY2[y] += 2;
+    }
+};
