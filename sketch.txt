@@ -434,3 +434,7 @@ if (keyIsPressed && keyCode === 49)  {
 
     noStroke();
  fill("red");
+
+var tekenSpeler = function(x, y) { 
+ image(imgB, spelerX, spelerY, 45, 45);
+};

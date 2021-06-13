@@ -221,10 +221,13 @@ var schadePlatformY2 = [275, 325, 250, 325];
  * @param {number} y y-coördinaat
  */
 var tekenSpeler = function(x, y) { 
- image(imgB, spelerX, spelerY, 45, 45);
+ noStroke();
+ fill("red");
+ ellipse(spelerX, spelerY, 45, 45);
 };
 
 
+  
 
 
 /**
@@ -400,8 +403,8 @@ function draw() {
      spelStatus = SPELEN;
      level = LEVELTWEE;
     levens = 1;
-    spawnX = 129;
-     spawnY = 500;
+    spelerX = spawnX
+    spelerY = spawnY
         score = 0;
         PuntenX2 = [271, 531, 771, 1021];
         PuntenY2 = [390, 300, 300, 450];
@@ -410,8 +413,8 @@ function draw() {
     if (keyIsPressed && keyCode === 51) {
      spelStatus = SPELEN;
      level = LEVELDRIE;
-     spawnX = 129;
-     spawnY = 500;
+     spelerX = spawnX
+    spelerY = spawnY
       levens = 1;
         score = 0;
         PuntenX3 =  [300, 300, 550, 1000];
@@ -482,8 +485,8 @@ switch(level) {
 if (keyIsPressed && keyCode === 50) {
      spelStatus = SPELEN;
      level = LEVELTWEE;
-     spawnX = 129;
-     spawnY = 500;
+    spelerX = spawnX
+    spelerY = spawnY
       levens = 1;
         score = 0;
         PuntenX2 = [271, 531, 771, 1021];
@@ -493,8 +496,8 @@ if (keyIsPressed && keyCode === 50) {
     if (keyIsPressed && keyCode === 51) {
      spelStatus = SPELEN;
      level = LEVELDRIE;
-     spawnX = 129;
-     spawnY = 500;
+     spelerX = spawnX
+     spelerY = spawnY
       levens = 1;
         score = 0;
         PuntenX3 =  [300, 300, 550, 1000];
@@ -549,8 +552,8 @@ if (keyIsPressed && keyCode === 50) {
       if (keyIsPressed && keyCode === 49) {
         spelStatus = SPELEN;
         level = LEVELEEN;
-        spawnX = 129;
-        spawnY = 500;
+       spelerX = spawnX
+      spelerY = spawnY
         levens = 1;
         score = 0;
         PuntenX = [300, 550, 800, 1000];
@@ -559,8 +562,8 @@ if (keyIsPressed && keyCode === 50) {
       if (keyIsPressed && keyCode === 50) {
      spelStatus = SPELEN;
      level = LEVELTWEE;
-     spawnX = 129;
-     spawnY = 500;
+     spelerX = spawnX
+     spelerY = spawnY
       levens = 1;
         score = 0;
         PuntenX2 = [271, 531, 771, 1021];
@@ -570,8 +573,8 @@ if (keyIsPressed && keyCode === 50) {
     if (keyIsPressed && keyCode === 51) {
      spelStatus = SPELEN;
      level = LEVELDRIE;
-     spawnX = 129;
-     spawnY = 500;
+     spelerX = spawnX
+    spelerY = spawnY
       levens = 1;
         score = 0;
         PuntenX3 =  [300, 300, 550, 1000];
