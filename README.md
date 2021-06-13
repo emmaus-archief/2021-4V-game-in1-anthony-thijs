@@ -21,8 +21,8 @@ Basis: uitleg, spelen, afgaan en punten
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [x] platformtegenstander die schade doet
-- [] plaatjes op platform of achtegrond
-- [ ] 
+- [x] plaatjes op platform of achtegrond 
+- [ ] bewegende achtergrond
 
 
 ## Credits

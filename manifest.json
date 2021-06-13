@@ -1,8 +1,8 @@
 {
-  "name": "De Spaceship",
-  "short_name": "Spaceship",
+  "name": "De jetpackguy",
+  "short_name": "jetpackguy",
   "icons": [{
-    "src": "icon-512x512.png",
+    "src": "jetpackguy",
       "sizes": "512x512",
       "type": "image/png"
     }],
