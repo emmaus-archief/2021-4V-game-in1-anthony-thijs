@@ -96,14 +96,13 @@ var imgA = 0;
 var imgB = 0;
 var imgC = 0;
 var imgD = 0;
-var imgE = 0;
+
 
 function preload() {
   imgA = loadImage('background.gif'); // plaatje laden
-  imgB = loadImage('metalplatform.png');
+  imgB = loadImage('jetpackguy.png');
   imgC = loadImage('spaceship.png');
   imgD = loadImage('shootingstar.png');
- 
     };
 
 
@@ -191,8 +190,9 @@ if (spelerX > x - 5 - spelerSize/2 &&
 /*Tekent veiligheids platformen*/
 
 var tekenPlatform = function(x,y,w,h) {
-        image(imgB, platform[0], y, w, h);
-    }
+    fill('blue');
+    rect(platform[0], y, w, h);
+}
 
 var schadePlatformX = [200, 475, 725, 975];
 var schadePlatformY = [300, 350, 270, 350];
@@ -220,12 +220,8 @@ var schadePlatformY2 = [275, 325, 250, 325];
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function(x, y) {
- noStroke();
- fill("red");
- ellipse(spelerX, spelerY, 45, 45);
-  
-   
+var tekenSpeler = function(x, y) { 
+ image(imgB, spelerX, spelerY, 45, 45);
 };
 
 
