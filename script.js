@@ -373,14 +373,14 @@ function draw() {
 
     fill(175, 175, 175)
     textSize(30)
-    text("Gebruik de linker en rechter pijltjes om heen en weer te bewegen. Met pijltje omhoog kan je springen. De langer je het pijltje ingedrukt houd de hoger je karakter springt.", 40, 20, 1240, 700)
-    text("Druk op de 1 2 3 toesten om een level/game te starten. Om te wisselen van level druk op 1 en druk op het level wat u wilt spelen", 40, 150, 1240, 700)
+    text("Gebruik de linker en rechter pijltjes om heen en weer te bewegen. Met pijltje omhoog kan je springen. De langer je het pijltje ingedrukt houd, de hoger je karakter springt.", 40, 20, 1240, 700)
+    text("Druk op de 1 2 3 toetsen om een level/game te starten. Om te wisselen van level, druk op 1 en druk op het level wat u wilt spelen", 40, 150, 1240, 700)
 
-    text("Blauwe platforms zijn veilig, de kleine spaceshipjes brengen schade op", 325, 265, 700, 700)
+    text("Hier links staan hoe alle platformen en punten eruit zien", 325, 265, 900, 700)
 
-    text("Hier links staan hoe alle platformen en punter eruit zien", 325, 375, 900, 700)
-    
-    text("Als u alles gelezen hebt kunt u nu de game starten door op 1 2 of 3 te druken", 300, 425, 800, 700)
+    text("Blauwe platforms zijn veilig, de kleine spaceshipjes brengen schade op", 325, 365, 700, 700)
+
+    text("Als u alles gelezen hebt kunt u nu de game starten door op 1 2 of 3 te druken", 325, 525, 800, 700)
     
     platform(170, 250, 100, 50)
     schadePlatform(170, 375, 100, 50)
@@ -678,14 +678,14 @@ switch(level) {
         background(0,0,0);
         textSize(80)
         fill('blue')
-        text("game over", 640 - 175, 360, 700, 700);
-        text("score: " + score, 640 - 175, 460, 700, 700);
+        text("game over", 640 - 175, 260, 700, 700);
+        text("score: " + score, 640 - 175, 360, 700, 700);
 
         if (score > highScore) {
             highScore = score;
         }
 
-        text ("Highscore: " + highScore, 640 - 175, 560, 700, 700);
+        text ("Highscore: " + highScore, 640 - 175, 460, 700, 700);
         level = LEVELEEN;
         level = LEVELTWEE;
         level = LEVELDRIE;
