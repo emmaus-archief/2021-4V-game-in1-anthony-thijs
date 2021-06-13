@@ -96,12 +96,14 @@ var imgA = 0;
 var imgB = 0;
 var imgC = 0;
 var imgD = 0;
+var imgE = 0;
 
 function preload() {
   imgA = loadImage('background.gif'); // plaatje laden
   imgB = loadImage('metalplatform.png');
   imgC = loadImage('spaceship.png');
   imgD = loadImage('shootingstar.png');
+  imgE = loadImage('jetpackguy.png');
     };
 
 
@@ -219,9 +221,7 @@ var schadePlatformY2 = [275, 325, 250, 325];
  * @param {number} y y-coördinaat
  */
 var tekenSpeler = function(x, y) {
- noStroke();
- fill("red");
- ellipse(spelerX, spelerY, 50, 50);
+ image(imgE, spelerX, spelerY, 100, 100);
 };
 
 
@@ -239,7 +239,7 @@ var tekenSpeler = function(x, y) {
        else if (keyIsDown(KEY_DOWN)) {spelerY += 13}
        
    };
-   
+
 /* laat de schadeplatformen bewegen*/
 var beweegPlatform = function(x,y) {
     

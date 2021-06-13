@@ -431,3 +431,6 @@ if (keyIsPressed && keyCode === 49)  {
 
     fill('blue');
     rect(x, y, w, h);
+
+    noStroke();
+ fill("red");
