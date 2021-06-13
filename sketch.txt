@@ -419,3 +419,15 @@ if (keyIsPressed && keyCode === 49)  {
        if (keyIsPressed && keyCode === KEY_SPACEBAR)  {
         spelStatus = UITLEG;
          }
+
+    var tekenPlatform = function(x,y,w,h) {
+        fill("blue");
+        rect(platformX[0], y, w, h);
+    };
+
+    var tekenPlatform = function(x,y,w,h) {
+        image(imgB, platform[0], y, w, h);
+    }
+
+    fill('blue');
+    rect(x, y, w, h);

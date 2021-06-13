@@ -95,11 +95,13 @@ var schadePlatformY2 = [315, 350, 350, 375];
 var imgA = 0;
 var imgB = 0;
 var imgC = 0;
+var imgD = 0;
 
 function preload() {
   imgA = loadImage('background.gif'); // plaatje laden
-  imgB = loadImage('platform.png');
+  imgB = loadImage('metalplatform.png');
   imgC = loadImage('spaceship.png');
+  imgD = loadImage('shootingstar.png');
     };
 
 
@@ -187,9 +189,8 @@ if (spelerX > x - 5 - spelerSize/2 &&
 /*Tekent veiligheids platformen*/
 
 var tekenPlatform = function(x,y,w,h) {
-    fill("blue");
-    rect(platformX[0], y, w, h);
-};
+        image(imgB, platform[0], y, w, h);
+    }
 
 var schadePlatformX = [200, 475, 725, 975];
 var schadePlatformY = [300, 350, 270, 350];
@@ -238,6 +239,7 @@ var tekenSpeler = function(x, y) {
        else if (keyIsDown(KEY_DOWN)) {spelerY += 13}
        
    };
+   
 /* laat de schadeplatformen bewegen*/
 var beweegPlatform = function(x,y) {
     
@@ -286,9 +288,7 @@ var Punten = function(x, y, w, h, p)
             PuntenY3.splice(p, 1);
          
     }
-
-      fill(187,224,255)
-      ellipse(x, y, w, h);
+      image(imgD,x, y, 60, 25);
 };
 
 /*tekent schadePlatform*/
@@ -304,9 +304,7 @@ var schadePlatform = function(x, y, w, h){
          spelerY = spelerY
          speedJump = 20;
         }
-        fill(180, 0, 0);
-        rect(x, y, w, h);
-      
+        image(imgC, x, y, w, h);
 };
 
 
@@ -433,7 +431,6 @@ function draw() {
       }
 
       tekenVeld();
-     
       tekenBorders();
       tekenPlatform();
 
